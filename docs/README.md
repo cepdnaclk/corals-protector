@@ -35,7 +35,7 @@ title: Project Template
 
 ## Introduction
 
-Description of the real world problem and solution, impact
+Sri Lanka is an island. We have many sea resources. One of the main resources is coral reefs. However, we do not care about corals. Corals are mostly destroyed nowadays. Corals have certain environmental conditions that they need in order to survive. These factors limit where corals can live. The main factors that can affect the corals are temperature, acidity, salinity, and sunlight. So, our device measures the temperature, acidity, salinity, and sunlight once and sends readings to the database, and then displays them on a website with graphical analytics. So, we can give this device to the environment department or any other society or researchers, and they can check the analytics and take action accordingly
 
 
 ## Solution Architecture
@@ -64,8 +64,8 @@ What was achieved, future developments, commercialization plans
 
 ## Links
 
-- [Project Repository](https://github.com/cepdnaclk/{{ page.repository-name }}){:target="_blank"}
-- [Project Page](https://cepdnaclk.github.io/{{ page.repository-name}}){:target="_blank"}
+- [Project Repository](https://github.com/cepdnaclk/corals-protector.git){:target="_blank"}
+- [Project Page](https://cepdnaclk.github.io/corals-protector/){:target="_blank"}
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
