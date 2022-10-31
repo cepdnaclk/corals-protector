@@ -9,14 +9,14 @@ title: Project Template
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# Corals Protector
 
 ---
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  E/18/013, Abilash R., [email](mailto:e18013@eng.pdn.ac.lk)
+-  E/18/115, Gowsigan A., [email](mailto:e18115@eng.pdn.ac.lk)
+-  E/18/366, Thulasiyan Y., [email](mailto:e18366@eng.pdn.ac.lk)
 
 <!-- Image (photo/drawing of the final hardware) should be here -->
 
