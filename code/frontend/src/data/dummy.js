@@ -2,8 +2,12 @@ import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { AiOutlineHome } from 'react-icons/ai';
+import { TbDeviceHeartMonitor } from 'react-icons/tb';
+import { GrMap } from 'react-icons/gr';
+import { BsTable } from 'react-icons/bs';
 import { IoMdContacts } from 'react-icons/io';
+import { GiWaveSurfer } from 'react-icons/gi';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
@@ -471,50 +475,50 @@ export const employeesGrid = [
 
 export const links = [
   {
-    title: 'Dashboard',
+    title: 'Main',
     links: [
       {
-        name: 'ecommerce',
-        icon: <FiShoppingBag />,
+        name: 'Home',
+        icon: <AiOutlineHome />,
+      },
+      {
+        name: 'About us',
+        icon: <GiWaveSurfer />,
       },
     ],
   },
 
   {
-    title: 'Pages',
+    title: 'Devices',
     links: [
       {
-        name: 'orders',
-        icon: <AiOutlineShoppingCart />,
+        name: 'Device 1',
+        icon: <TbDeviceHeartMonitor />,
       },
       {
-        name: 'employees',
-        icon: <IoMdContacts />,
+        name: 'Device 2',
+        icon: <TbDeviceHeartMonitor />,
       },
       {
-        name: 'customers',
-        icon: <RiContactsLine />,
+        name: 'Device 3',
+        icon: <TbDeviceHeartMonitor />,
       },
     ],
   },
   {
-    title: 'Apps',
+    title: 'Components',
     links: [
       {
         name: 'calendar',
         icon: <AiOutlineCalendar />,
       },
       {
-        name: 'kanban',
-        icon: <BsKanban />,
+        name: 'Map',
+        icon: <GrMap />,
       },
       {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
+        name: 'Main table',
+        icon: <BsTable />,
       },
     ],
   },
@@ -553,6 +557,23 @@ export const links = [
       {
         name: 'stacked',
         icon: <AiOutlineBarChart />,
+      },
+      {
+        title: 'Devices',
+        links: [
+          {
+            name: 'Device 1',
+            icon: <AiOutlineCalendar />,
+          },
+          {
+            name: 'Device 2',
+            icon: <IoMdContacts />,
+          },
+          {
+            name: 'Device 3',
+            icon: <RiContactsLine />,
+          },
+        ],
       },
     ],
   },
