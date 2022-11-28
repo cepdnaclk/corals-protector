@@ -3,7 +3,7 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and project title
-repository-name: [eYY-3yp-project-template](https://github.com/cepdnaclk/e18-3yp-Corals-Protector/edit/main/docs/README.md)
+repository-name: eYY-3yp-project-template
 title: Project Template
 ---
 
@@ -93,10 +93,40 @@ High level diagram + description
 ## Testing
 
 Testing done on hardware and software,
-For Hardware Testing,
-* Sensors Testing
-* Data Reading Validation
-* System sustainability
+
+## Unit testing
+
+Testing for individual units and components
+
+Done during the development
+
+Can use Jest Javascript testing framework
+
+For NodeJs and React.js
+
+## Scalability&Load Testing
+
+Behaviors when a large number of users access
+
+Speed, Response time, and Stability?
+
+Jmeter tool
+
+## Security Testing
+
+Avoid Security risks
+
+Zed Attack proxy tool
+
+Open source
+
+## Hardware Testing
+
+Check Connections 
+
+Inputs and Outputs
+
+PlatformIO
 
 ## Detailed budget
 
