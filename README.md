@@ -1,20 +1,48 @@
 ___
-# DELETE THIS INSTRUCTIONS AND ADD AN INTRODUCTION ABOUT YOUR PROJECT
+# Corals Protector
 ___
 
-# eYY-3yp-project-template
+Sri Lanka is an island. We have many sea resources. One of the main resources is
+coral reefs. For centuries, coral reefs have been a valuable resource for the people of Sri
+Lanka. Coral reefs are among the most biologically valuable ecosystems on the globe. Coral
+reefs rank among the most biologically productive and diverse of all-natural ecosystems. A
+single reef can be home to 3,000 different species, while one-third of the world’s fish species
+depend on them. They calm the energy of the waves, providing vital protection to the shores.
+They are also a source of food and new medicines. Millions of people depend on reefs for
+food, income, and protection. Fishing, diving, and snorkeling on and near reefs add millions
+of rupees to local businesses.
 
-This is a sample repository you can use for your Embedded Systems project. Once you followed these instructions, remove the text and add a brief introduction to here.
+However, we do not care about corals. Corals are mostly destroyed nowadays.
+Corals have certain environmental conditions that they need in order to survive. These
+factors limit where corals can live. The main factors that can affect the corals are
+temperature, acidity, salinity, and sunlight. If researchers or well-wishers try to find the
+destroying places’ environmental factors, they don't have any specific device to do that. So
+they are facing a lot of problems while taking a reading in that environment. It is also so hard
+to find a suitable place(with good environmental factors) for new coral growth projects.
 
-### Enable GitHub Pages
+So, we plan to create a device to measure the temperature, acidity, salinity, and
+sunlight once and send readings to the database and then display them on a website with
+graphical analytics. So, we can give this device to the environment department or any other
+society or researchers, and they can check the analytics and take action accordingly, or use
+it to select the best environment to grow new corals or clean the polluted environment.
+For the current situation, they took these measurements individually for every factor
+(There is no combined system exit). But that is very difficult and time-consuming. And these
+readings are not very accurate, so we need to take the readings for at least one day, after
+which we need to upload those measurements manually and take the decision according to
+those measurements.
 
-You can put the things to be shown in GitHub pages into the _docs/_ folder. Both html and md file formats are supported. You need to go to settings and enable GitHub pages and select _main_ branch and _docs_ folder from the dropdowns, as shown in the below image.
+Our device can take all the measurements at once, and it will store all the readings
+itself for a one-day period. Then we can take it out of the water. After that, it can upload all
+the measurements to the cloud. We can retrieve all the data by using our website. It will
+show the analytics of those measurements. We will provide the best web-based UI so they
+can easily understand analytics and compare past data history. When they put the device
+into the water, they don't need to spend time on observing that. The device can be taken
+after one day (24 hours). So, testing time will be minimized and user time saved compared
+to the current situation. The data includes locations also, so we can identify the locations
+easily again.
 
-![image](https://user-images.githubusercontent.com/11540782/98789936-028d3600-2429-11eb-84be-aaba665fdc75.png)
-
-### Special Configurations
-
-These projects will be automatically added into [https://projects.ce.pdn.ac.lk](). If you like to show more details about your project on this site, you can fill the parameters in the file, _/docs/index.json_
+However, our system (device + website) will be able to solve the problem of taking
+measurements of coral growing environmental factors and will be very useful for users.
 
 ```
 {
@@ -50,8 +78,3 @@ These projects will be automatically added into [https://projects.ce.pdn.ac.lk](
 }
 ```
 
-Once you filled this _index.json_ file, please verify the syntax is correct. (You can use [this](https://jsonlint.com/) tool).
-
-### Page Theme
-
-A custom theme integrated with this GitHub Page, which is based on [github.com/cepdnaclk/eYY-project-theme](https://github.com/cepdnaclk/eYY-project-theme). If you like to remove this default theme, you can remove the file, _docs/\_config.yml_ and use HTML based website.
