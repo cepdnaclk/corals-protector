@@ -55,6 +55,39 @@ measurements of coral growing environmental factors and will be very useful for 
 
 ![image](https://user-images.githubusercontent.com/73667144/204257594-2347aa62-d789-4b93-af4e-aa38f7ee7182.png)
 
+## Unit testing
+
+Testing for individual units and components
+
+Done during the development
+
+Can use Jest Javascript testing framework
+
+For NodeJs and React.js
+
+## Scalability&Load Testing
+
+Behaviors when a large number of users access
+
+Speed, Response time, and Stability?
+
+Jmeter tool
+
+## Security Testing
+
+Avoid Security risks
+
+Zed Attack proxy tool
+
+Open source
+
+## Hardware Testing
+
+Check Connections 
+
+Inputs and Outputs
+
+PlatformIO
 ```
 {
   "title": "This is the title of the project",
