@@ -2,10 +2,10 @@
 layout: home
 permalink: index.html
 
-# Please update this with your repository name and project title
-repository-name: eYY-3yp-project-template
+<!-- # Please update this with your repository name and project title
+repository-name: [eYY-3yp-project-template](https://github.com/cepdnaclk/e18-3yp-Corals-Protector/edit/main/docs/README.md)
 title: Project Template
----
+--- -->
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
@@ -41,6 +41,8 @@ Sri Lanka is an island. We have many sea resources. One of the main resources is
 ## Solution Architecture
 
 High level diagram + description
+![0 drawio (1)](https://user-images.githubusercontent.com/73667144/204257372-082ade0f-4162-4f16-8a4b-d1a2332ae505.jpg)
+
 
 ## Hardware and Software Designs
 
@@ -51,12 +53,8 @@ Detailed designs with many sub-sections
 Testing done on hardware and software, detailed + summarized results
 
 ## Detailed budget
+![image](https://user-images.githubusercontent.com/73667144/204257594-2347aa62-d789-4b93-af4e-aa38f7ee7182.png)
 
-All items and costs
-
-| Item          | Quantity  | Unit Cost  | Total  |
-| ------------- |:---------:|:----------:|-------:|
-| Sample item   | 5         | 10 LKR     | 50 LKR |
 
 ## Conclusion
 
