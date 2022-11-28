@@ -88,7 +88,7 @@ High level diagram + description
 
 ## Hardware and Software Designs
 
-Detailed designs with many sub-sections
+
 ![image](https://user-images.githubusercontent.com/73667144/204257594-2347aa62-d789-4b93-af4e-aa38f7ee7182.png)
 ## Testing
 
