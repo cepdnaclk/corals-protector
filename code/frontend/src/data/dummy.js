@@ -482,7 +482,7 @@ export const links = [
         icon: <AiOutlineHome />,
       },
       {
-        name: 'About us',
+        name: 'AboutUs',
         icon: <GiWaveSurfer />,
       },
     ],

@@ -1,32 +1,7 @@
 import React from 'react';
-import {BsCurrencyDollar} from 'react-icons/bs';
-import {GoPrimitiveDot} from 'react-icons/go';
-import {IoIosMore} from 'react-icons/io';
-import {DropDownListComponent} from '@syncfusion/ej2-react-dropdowns';
-
-import {Stacked, Pie, Button, LineChart, SparkLine} from '../components';
-import {
-    earningData,
-    medicalproBranding,
-    recentTransactions,
-    weeklyStats,
-    dropdownData,
-    SparklineAreaData,
-    ecomPieChartData
-} from '../data/dummy';
-import {useStateContext} from '../contexts/ContextProvider';
-import product9 from '../data/product9.jpg';
-
-const DropDown = ({currentMode}) => (
-    <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
-        <DropDownListComponent id="time" fields={{text: 'Time', value: 'Id'}}
-                               style={{border: 'none', color: (currentMode === 'Dark') && 'white'}} value="1"
-                               dataSource={dropdownData} popupHeight="220px" popupWidth="120px"/>
-    </div>
-);
 
 const Home = () => {
-    const {currentColor, currentMode} = useStateContext();
+
 
     return (
         // <div className="mt-24">
@@ -42,8 +17,24 @@ const Home = () => {
                                 <p>We are strategists, designers and developers. Innovators and problem solvers. Small
                                     enough to be
                                     simple and quick.</p>
+                                <div className="mt-12" >
+                                    <a
+                                        href="/login"
+                                        className="get-started text-black font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                                    >
+                                        Login
+                                    </a>
+                                    <a
+                                        href="/aboutus"
+                                        className="github-star ml-1 text-black font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+
+                                    >
+                                        About Us
+                                    </a>
+                                </div>
+
                             </div>
-                            <div className="grid grid-cols-2 gap-4 mt-8">
+                            <div className="grid grid-cols-2 gap-4 mt-8" >
                                 <img className="w-full rounded-lg"
                                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png"
                                      alt="office content 1"/>
@@ -51,6 +42,7 @@ const Home = () => {
                                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png"
                                      alt="office content 2"/>
                             </div>
+
 
                         </div>
                     </div>
