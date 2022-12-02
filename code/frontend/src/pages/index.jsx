@@ -6,6 +6,8 @@ export { default as Editor } from './Editor';
 export { default as Customers } from './Customers';
 export { default as Aboutus } from './Aboutus'
 export { default as Login } from './Login'
+export { default as AddDevice } from './AddDevice'
+
 
 export { default as Calendar } from './Calendar';
 export { default as Area } from './Charts/Area';
