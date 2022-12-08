@@ -890,6 +890,39 @@ export const userProfileData = [
     iconBg: 'rgb(254, 201, 15)',
   },
 ];
+export const readingsGrid = [
+
+  {
+    field: 'Date',
+    headerText: 'Date',
+    width: '150',
+    textAlign: 'Center',
+  },
+  { field: 'Location',
+    headerText: 'Location',
+    width: '150',
+    textAlign: 'Center',
+  },
+  {
+    field: 'Ph',
+    headerText: 'Ph',
+    textAlign: 'Center',
+    width: '150',
+  },
+  {
+    headerText: 'Sunlight',
+    field: 'Sunlight',
+    textAlign: 'Center',
+    width: '120',
+  },
+  {
+    field: 'Temperature',
+    headerText: 'Temperature',
+    width: '120',
+    textAlign: 'Center',
+  },
+
+];
 
 export const ordersGrid = [
   {
@@ -2141,6 +2174,185 @@ export const employeesData = [
       avatar2,
   },
 ];
+
+export const readingsData = [
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+  {
+    Date: '10.12.2022',
+    Location: '10.101.21102.1',
+    Ph: 5,
+    Sunlight: 56,
+    Temperature: 10,
+
+  },
+    ]
 
 export const ordersData = [
   {

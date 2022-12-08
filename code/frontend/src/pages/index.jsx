@@ -7,6 +7,7 @@ export { default as Customers } from './Customers';
 export { default as Aboutus } from './Aboutus'
 export { default as Login } from './Login'
 export { default as AddDevice } from './AddDevice'
+export { default as MainTable } from './MainTable'
 
 
 export { default as Calendar } from './Calendar';

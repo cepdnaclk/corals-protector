@@ -24,7 +24,8 @@ import {
     Financial,
     ColorMapping,
     Editor,
-    AddDevice
+    AddDevice,
+    MainTable
 } from './pages';
 
 import { useStateContext} from "./contexts/ContextProvider";
@@ -71,6 +72,7 @@ function App() {
                           <Route path="/aboutus" element={<Aboutus />} />
                           <Route path = "/login" element={<Login/>}/>
                           <Route path = "/adddevice" element={<AddDevice/>}/>
+                          <Route path = "/maintable" element={<MainTable/>}/>
 
                           {/* pages  */}
                           <Route path="/orders" element={<Orders />} />
