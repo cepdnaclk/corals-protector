@@ -492,17 +492,10 @@ export const links = [
     title: 'Devices',
     links: [
       {
-        name: 'Device 1',
+        name: 'Device',
         icon: <TbDeviceHeartMonitor />,
       },
-      {
-        name: 'Device 2',
-        icon: <TbDeviceHeartMonitor />,
-      },
-      {
-        name: 'Device 3',
-        icon: <TbDeviceHeartMonitor />,
-      },
+      
     ],
   },
   {
@@ -517,7 +510,7 @@ export const links = [
         icon: <GrMap />,
       },
       {
-        name: 'Main table',
+        name: 'Maintable',
         icon: <BsTable />,
       },
     ],
