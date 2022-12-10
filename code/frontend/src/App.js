@@ -25,10 +25,14 @@ import {
     ColorMapping,
     Editor,
     AddDevice,
-    MainTable
+    MainTable,
+    Ph,
+    Temperature,
+    Light
 } from './pages';
 
 import {useStateContext} from "./contexts/ContextProvider";
+
 
 function App() {
     const {
@@ -97,6 +101,10 @@ function App() {
                                 <Route path="/adddevice" element={<AddDevice/>}/>
                                 <Route path="/maintable" element={<MainTable/>}/>
                                 <Route path="/device" element={<Device/>}/>
+                                <Route path="/ph" element={<Ph/>}/>
+                                <Route path="/light" element={<Light/>}/>
+                                <Route path="/temperature" element={<Temperature/>}/>
+
 
                                 {/* pages  */}
                                 <Route path="/orders" element={<Orders/>}/>
