@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '../data/avatar.jpg';
-import { Cart, UserProfile } from '.';
+import { UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
@@ -55,7 +55,6 @@ const Navbar = () => {
 
         <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
         <div className="flex">
-          <NavButton title="Cart" customFunc={() => handleClick('cart')} color={currentColor} icon={<FiShoppingCart />} />
           <TooltipComponent content="Profile" position="BottomCenter">
             <div
                 className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
@@ -76,7 +75,6 @@ const Navbar = () => {
             </div>
           </TooltipComponent>
 
-          {isClicked.cart && (<Cart />)}
           {isClicked.userProfile && (<UserProfile />)}
         </div>
       </div>

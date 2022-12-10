@@ -1,6 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {FiSettings} from "react-icons/fi";
+import {useStateContext} from "../contexts/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+    const {
+        setCurrentColor,
+        setCurrentMode,
+        currentMode,
+        activeMenu,
+        currentColor,
+        themeSettings,
+        setThemeSettings
+    } = useStateContext();
+
+    useEffect(() => {
+        const currentThemeColor = localStorage.getItem('colorMode');
+        const currentThemeMode = localStorage.getItem('themeMode');
+        if (currentThemeColor && currentThemeMode) {
+            setCurrentColor(currentThemeColor);
+            setCurrentMode(currentThemeMode);
+        }
+    }, []);
+
+    let navigate = useNavigate();
 
 
     return (
@@ -18,19 +41,22 @@ const Home = () => {
                                     enough to be
                                     simple and quick.</p>
                                 <div className="mt-12" >
-                                    <a
-                                        href="/login"
-                                        className="get-started text-black font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                                    <button
+                                        type="button"
+                                        onClick={() => navigate("/login")}
+                                        style={{background: currentColor, borderRadius: '5%' , margin:'1%'}}
+                                        className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
                                     >
-                                        Login
-                                    </a>
-                                    <a
-                                        href="/aboutus"
-                                        className="github-star ml-1 text-black font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-
+                                        Sign In
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => navigate("/aboutus")}
+                                        style={{background: currentColor, borderRadius: '5%' , margin:'1%'}}
+                                        className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
                                     >
                                         About Us
-                                    </a>
+                                    </button>
                                 </div>
 
                             </div>

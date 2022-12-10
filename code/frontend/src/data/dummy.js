@@ -498,75 +498,25 @@ export const links = [
       
     ],
   },
-  {
-    title: 'Components',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'Map',
-        icon: <GrMap />,
-      },
-      {
-        name: 'Maintable',
-        icon: <BsTable />,
-      },
-    ],
-  },
+
   {
     title: 'Charts',
     links: [
       {
-        name: 'line',
+        name: 'Maintable',
+        icon: <BsTable />,
+      },
+      {
+        name: 'Ph',
         icon: <AiOutlineStock />,
       },
       {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
+        name: 'Light',
+        icon: <AiOutlineStock />,
       },
       {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        title: 'Devices',
-        links: [
-          {
-            name: 'Device 1',
-            icon: <AiOutlineCalendar />,
-          },
-          {
-            name: 'Device 2',
-            icon: <IoMdContacts />,
-          },
-          {
-            name: 'Device 3',
-            icon: <RiContactsLine />,
-          },
-        ],
+        name: 'Temperature',
+        icon: <AiOutlineStock />,
       },
     ],
   },

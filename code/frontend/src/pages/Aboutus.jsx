@@ -1,6 +1,24 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import {useStateContext} from "../contexts/ContextProvider";
+import {useNavigate} from "react-router-dom";
 
 const Aboutus = () => {
+    const {
+        setCurrentColor,
+        setCurrentMode,
+        currentColor,
+    } = useStateContext();
+
+    useEffect(() => {
+        const currentThemeColor = localStorage.getItem('colorMode');
+        const currentThemeMode = localStorage.getItem('themeMode');
+        if (currentThemeColor && currentThemeMode) {
+            setCurrentColor(currentThemeColor);
+            setCurrentMode(currentThemeMode);
+        }
+    }, []);
+
+    let navigate = useNavigate();
     return (
         <div className="flex flex-wrap lg:flex-nowrap justify-center ">
             <div
@@ -12,19 +30,22 @@ const Aboutus = () => {
                     <p className="mb-4">However, we do not care about corals. Corals are mostly destroyed nowadays. Corals have certain environmental conditions that they need in order to survive. These factors limit where corals can live. The main factors that can affect the corals are temperature, acidity, salinity, and sunlight. If researchers or well-wishers try to find the destroying places’ environmental factors, they don't have any specific device to do that. So they are facing a lot of problems while taking a reading in that environment. It is also so hard to find a suitable place(with good environmental factors) for new coral growth projects.</p>
 
                     <div className="mt-12"  >
-                        <a
-                            href="/login"
-                            className="get-started text-black font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-lightBlue active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                        <button
+                            type="button"
+                            onClick={() => navigate("/login")}
+                            style={{background: currentColor, borderRadius: '5%' , margin:'1%'}}
+                            className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
                         >
-                            Login
-                        </a>
-                        <a
-                            href="/aboutus"
-                            className="github-star ml-1 text-black font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-
+                            Sign In
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => navigate("/aboutus")}
+                            style={{background: currentColor, borderRadius: '5%' , margin:'1%'}}
+                            className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
                         >
                             About Us
-                        </a>
+                        </button>
                     </div>
                 </div>
 
