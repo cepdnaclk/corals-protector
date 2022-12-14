@@ -8,6 +8,4 @@ const DeviceReadingSchema = new mongoose.Schema({
   timestamp: { type: Date, required: true },
 });
 
-const SensorReading = mongoose.model("DeviceReading", DeviceReadingSchema);
-
-module.exports = SensorReading;
+module.exports = mongoose.model("DeviceReading", DeviceReadingSchema);
