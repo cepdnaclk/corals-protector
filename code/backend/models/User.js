@@ -21,8 +21,7 @@ const UserSchema = new mongoose.Schema(
     },
     phoneNO: {
       type: String,
-      required: true,
-      min: 6,
+      min: 12,
     },
     devices: {
       type: Array,
