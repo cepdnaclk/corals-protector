@@ -40,7 +40,7 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-// get a user
+//get a user
 router.get("/:id", async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -52,6 +52,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // //follow a user
+
 // router.put("/:id/follow", async (req, res) => {
 //   if (req.body.userId !== req.params.id) {
 //     try {
@@ -72,7 +73,8 @@ router.get("/:id", async (req, res) => {
 //   }
 // });
 
-//unfollow a user
+// //unfollow a user
+
 // router.put("/:id/unfollow", async (req, res) => {
 //   if (req.body.userId !== req.params.id) {
 //     try {

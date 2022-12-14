@@ -19,21 +19,14 @@ const UserSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
-    profilePicture: {
+    phoneNO: {
       type: String,
-      default: "",
+      required: true,
+      min: 6,
     },
     devices: {
       type: Array,
       default: [],
-    },
-    desc: {
-      type: String,
-      max: 50,
-    },
-    from: {
-      type: String,
-      max: 50,
     },
   },
   { timestamps: true }
