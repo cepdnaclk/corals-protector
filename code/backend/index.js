@@ -22,7 +22,7 @@ app.use(morgan("common"));
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
-app.use("/api/device", deviceRoute);
+app.use("/api/devices", deviceRoute);
 app.use("/api/reading", readingRoute);
 
 app.listen(8800, () => {

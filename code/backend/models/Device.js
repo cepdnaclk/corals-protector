@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const deviceSchema = new mongoose.Schema(
   {
-    deviceId: {
+    deviceCode: {
       type: String,
       required: true,
     },
