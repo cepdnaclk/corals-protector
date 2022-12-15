@@ -23,6 +23,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       min: 12,
     },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
     // devices: [{ type: mongoose.Types.ObjectId, ref: "Device" }],
     devices: {
       type: Array,
