@@ -21,9 +21,13 @@ const UserSchema = new mongoose.Schema(
     },
     phoneNO: {
       type: String,
-      required: true,
-      min: 6,
+      min: 12,
     },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    // devices: [{ type: mongoose.Types.ObjectId, ref: "Device" }],
     devices: {
       type: Array,
       default: [],
