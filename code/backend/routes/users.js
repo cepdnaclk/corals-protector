@@ -52,28 +52,26 @@ router.get("/:id", async (req, res) => {
 });
 
 //Add a device
+router.put("/:id/device", async (req, res) => {
+  //param id is device id
+  if (req.params.id !== null) {
+    try {
+      const currentUser = await User.findById(req.body.userId);
+      if (!currentUser.devices.includes(req.params.id)) {
+        await currentUser.updateOne({ $push: { devices: req.params.id } });
+        res.status(200).json("device has been added");
+      } else {
+        res.status(403).json("you allready have this device");
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(403).json("no device id");
+  }
+});
 
-// router.put("/:id/device", async (req, res) => {
-//   if (req.body.deviceId !== null) {
-//     try {
-//       const user = await User.findById(req.params.id);
-//       const currentUser = await User.findById(req.body.userId);
-//       if (!user.devices.includes(req.params.id)) {
-//         await user.updateOne({ $push: { devices: req.body.userId } });
-//         await currentUser.updateOne({ $push: { followings: req.params.id } });
-//         res.status(200).json("device has been added");
-//       } else {
-//         res.status(403).json("you allready have this device");
-//       }
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   } else {
-//     res.status(403).json("no device id");
-//   }
-// });
-
-// //unfollow a user
+// //remove a device from user
 
 // router.put("/:id/unfollow", async (req, res) => {
 //   if (req.body.userId !== req.params.id) {
