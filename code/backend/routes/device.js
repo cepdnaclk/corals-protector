@@ -36,4 +36,8 @@ router.get("/all", function (req, res) {
   });
 });
 
+//update device
+//delete device
+//get a device
+
 module.exports = router;

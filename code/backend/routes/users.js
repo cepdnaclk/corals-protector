@@ -91,3 +91,5 @@ router.put("/:id/removeDevice", async (req, res) => {
 });
 
 module.exports = router;
+
+// get all users

@@ -1,26 +1,22 @@
 const router = require("express").Router();
-const User = require("../models/Device");
+const SensorReading = require("../models/Reading");
 const bcrypt = require("bcrypt");
-const Device = require("../models/Device");
 
-//REGISTER
-router.post("/register", async (req, res) => {
+//Save the reading
+router.post("/sensor-reading", async (req, res) => {
   try {
-    //generate new password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
-    //create new user
-    const newDevice = new Device({
-      deviceId: req.body.deviceId,
-      password: hashedPassword,
+    // Create a new sensor reading
+    const reading = new SensorReading({
+      temperature: req.body.temperature,
+      humidity: req.body.humidity,
+      timestamp: new Date(),
     });
 
-    //save user and respond
-    const device = await newDevice.save();
-    res.status(200).json(device);
-  } catch (err) {
-    res.status(500).json(err);
+    // Save the reading to the database
+    await reading.save();
+    res.status(201).json("Save the reading to the database");
+  } catch (error) {
+    res.sendStatus(500);
   }
 });
 
