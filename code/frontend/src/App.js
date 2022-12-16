@@ -1,6 +1,6 @@
 import './App.css';
 
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {FiSettings} from 'react-icons/fi';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
@@ -18,9 +18,13 @@ import {
 } from './pages';
 
 import {useStateContext} from "./contexts/ContextProvider";
+import {AuthContext} from "./contexts/AuthContext";
 
 
 function App() {
+    const {user} = useContext(AuthContext)
+    console.log(user)
+    const test = false
     const {
         setCurrentColor,
         setCurrentMode,
@@ -83,13 +87,13 @@ function App() {
                                 <Route path="/" element={(<Home/>)}/>
                                 <Route path="/home" element={(<Home/>)}/>
                                 <Route path="/aboutus" element={<Aboutus/>}/>
-                                <Route path="/login" element={<Login/>}/>
-                                <Route path="/adddevice" element={<AddDevice/>}/>
-                                <Route path="/maintable" element={<MainTable/>}/>
-                                <Route path="/device" element={<Device/>}/>
-                                <Route path="/ph" element={<Ph/>}/>
-                                <Route path="/light" element={<Light/>}/>
-                                <Route path="/temperature" element={<Temperature/>}/>
+                                <Route path="/login" element={user?<Home/>:<Login/>}/>
+                                <Route path="/adddevice" element={user?<AddDevice/>:<Login/>}/>
+                                <Route path="/maintable" element={user?<MainTable/>:<Login/>}/>
+                                <Route path="/device" element={user?<Device/>:<Login/>}/>
+                                <Route path="/ph" element={user?<Ph/>:<Login/>}/>
+                                <Route path="/light" element={user?<Light/>:<Login/>}/>
+                                <Route path="/temperature" element={user?<Temperature/>:<Login/>}/>
 
                             </Routes>
                         </div>

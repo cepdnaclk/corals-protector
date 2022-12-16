@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useContext, useEffect} from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
@@ -9,6 +9,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import avatar from '../data/avatar.jpg';
 import { UserProfile } from '.';
 import { useStateContext } from '../contexts/ContextProvider';
+import {AuthContext} from "../contexts/AuthContext";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
     <TooltipComponent content={title} position="BottomCenter">
@@ -28,6 +29,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
+    const {user} = useContext(AuthContext)
   const { currentColor, activeMenu, setActiveMenu, handleClick, isClicked, setScreenSize, screenSize } = useStateContext();
 
   useEffect(() => {
@@ -51,6 +53,7 @@ const Navbar = () => {
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
+
       <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
 
         <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
@@ -60,18 +63,18 @@ const Navbar = () => {
                 className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
                 onClick={() => handleClick('userProfile')}
             >
-              <img
-                  className="rounded-full w-8 h-8"
-                  src={avatar}
-                  alt="user-profile"
-              />
+                {user ? <img
+                    className="rounded-full w-8 h-8"
+                    src={avatar}
+                    alt="user-profile"
+                /> :<div></div>}
               <p>
-                <span className="text-gray-400 text-14">Hi,</span>{' '}
+                <span className="text-gray-400 text-14">{user?"Hi,":""}</span>{' '}
                 <span className="text-gray-400 font-bold ml-1 text-14">
-                Michael
+                {user?user.username:""}
               </span>
               </p>
-              <MdKeyboardArrowDown className="text-gray-400 text-14" />
+                {user?<MdKeyboardArrowDown className="text-gray-400 text-14"/>:""}
             </div>
           </TooltipComponent>
 
