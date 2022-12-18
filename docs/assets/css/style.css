@@ -310,6 +310,13 @@ h6 {
   visibility: visible;
 }
 
+.corals{
+  height: 20rem;
+}
+.corals1{
+  height: 15rem;
+}
+
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
