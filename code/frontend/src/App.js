@@ -14,7 +14,8 @@ import {
     MainTable,
     Ph,
     Temperature,
-    Light
+    Light,
+    Adminpage
 } from './pages';
 
 import {useStateContext} from "./contexts/ContextProvider";
@@ -94,6 +95,7 @@ function App() {
                                 <Route path="/ph" element={user?<Ph/>:<Login/>}/>
                                 <Route path="/light" element={user?<Light/>:<Login/>}/>
                                 <Route path="/temperature" element={user?<Temperature/>:<Login/>}/>
+                                <Route path="/adminpage" element={(<Adminpage/>)}/>
 
                             </Routes>
                         </div>

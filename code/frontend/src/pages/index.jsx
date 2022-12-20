@@ -6,6 +6,7 @@ export { default as MainTable } from './MainTable'
 export { default as Ph} from './Ph'
 export { default as Light} from './Light'
 export { default as Temperature} from './Temperature'
+export { default as Adminpage} from './Adminpage'
 
 
 

@@ -1,9 +1,9 @@
 import {Login} from "../pages";
 import {render, screen} from "@testing-library/react";
 
-test("username input should be rendered", ()=>{
+test("get text", ()=>{
     render(<Login/>);
-    const  userInputEl = screen.getByPlaceholderText(/Email address/i);
-    expect(userInputEl).toBeInDocument()
+    const  textElement = screen.getByText(/Sign in to your account/i);
+    expect(textElement).toBeInDocument()
     }
 );

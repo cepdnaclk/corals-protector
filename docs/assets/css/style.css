@@ -311,10 +311,7 @@ h6 {
 }
 
 .corals{
-  height: 20rem;
-}
-.corals1{
-  height: 15rem;
+  height: 17rem;
 }
 
 @media (max-width: 1366px) {
@@ -694,12 +691,12 @@ section {
 }
 
 /*--------------------------------------------------------------
-# features
+# hardware
 --------------------------------------------------------------*/
-.features{
+.hardware{
   background-color: #cdcccc;
 }
-.features .icon-box {
+.hardware .icon-box {
   padding: 60px 30px;
   transition: all ease-in-out 0.3s;
   background: #fefefe;
@@ -707,8 +704,13 @@ section {
   border-radius: 18px;
   border-bottom: 5px solid #fff;
 }
+.hardware .img{
+  width: 90%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
 
-.features .icon-box .icon {
+.hardware .icon-box .icon {
   width: 64px;
   height: 64px;
   background: #009961;
@@ -721,33 +723,33 @@ section {
   color: #fff;
 }
 
-.features .icon-box .icon i {
+.hardware .icon-box .icon i {
   font-size: 28px;
 }
 
-.features .icon-box h4 {
+.hardware .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.features .icon-box h4 a {
+.hardware .icon-box h4 a {
   color: #282828;
   transition: ease-in-out 0.3s;
 }
 
-.features .icon-box p {
+.hardware .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.features .icon-box:hover {
+.hardware .icon-box:hover {
   transform: translateY(-10px);
   border-color: #009961;
 }
 
-.features .icon-box:hover h4 a {
+.hardware .icon-box:hover h4 a {
   color: #009961;
 }
 
@@ -829,9 +831,10 @@ section {
 }
 
 .hardware .img{
-  width: 90%;
+  /* margin-left: 14rem; */
+  width: 65%;
   margin-bottom: 5%;
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .hardware .icon-box h4 {
@@ -843,7 +846,7 @@ section {
 .hardware .icon-box i {
   font-size: 48px;
   float: left;
-  color: #009961;
+  color: #ffffff;
 }
 
 .hardware .icon-box p {
