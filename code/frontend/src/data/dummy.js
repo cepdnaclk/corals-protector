@@ -384,7 +384,63 @@ export const LinePrimaryXAxis = {
   background: 'white',
 };
 
+export const LinePrimaryXAxisPh = {
+  valueType: 'DateTime',
+  labelFormat: 'y',
+  intervalType: 'Years',
+  edgeLabelPlacement: 'Shift',
+  majorGridLines: { width: 0 },
+  background: 'white',
+};
+export const LinePrimaryXAxisLight = {
+  valueType: 'DateTime',
+  labelFormat: 'y',
+  intervalType: 'Years',
+  edgeLabelPlacement: 'Shift',
+  majorGridLines: { width: 0 },
+  background: 'white',
+};
+export const LinePrimaryXAxisTemperature = {
+  valueType: 'DateTime',
+  labelFormat: 'y',
+  intervalType: 'Years',
+  edgeLabelPlacement: 'Shift',
+  majorGridLines: { width: 0 },
+  background: 'white',
+};
+
 export const LinePrimaryYAxis = {
+  labelFormat: '{value}%',
+  rangePadding: 'None',
+  minimum: 0,
+  maximum: 14,
+  interval: 2,
+  lineStyle: { width: 0 },
+  majorTickLines: { width: 0 },
+  minorTickLines: { width: 0 },
+};
+
+export const LinePrimaryYAxisPh = {
+  labelFormat: '{value}',
+  rangePadding: 'None',
+  minimum: 0,
+  maximum: 14,
+  interval: 2,
+  lineStyle: { width: 0 },
+  majorTickLines: { width: 0 },
+  minorTickLines: { width: 0 },
+};
+export const LinePrimaryYAxisTemperature = {
+  labelFormat: '{value} *c',
+  rangePadding: 'None',
+  minimum: 0,
+  maximum: 60,
+  interval: 6,
+  lineStyle: { width: 0 },
+  majorTickLines: { width: 0 },
+  minorTickLines: { width: 0 },
+};
+export const LinePrimaryYAxisLight = {
   labelFormat: '{value}%',
   rangePadding: 'None',
   minimum: 0,
@@ -3217,32 +3273,93 @@ export const scheduleData = [
 
 export const lineChartData = [
   [
-    { x: new Date(2005, 0, 1), y: 21 },
-    { x: new Date(2006, 0, 1), y: 24 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 38 },
-    { x: new Date(2009, 0, 1), y: 54 },
-    { x: new Date(2010, 0, 1), y: 57 },
-    { x: new Date(2011, 0, 1), y: 70 },
+    { x: new Date(2005, 0, 1), y: 2 },
+    { x: new Date(2006, 0, 1), y: 5 },
+    { x: new Date(2007, 0, 1), y: 6 },
+    { x: new Date(2008, 0, 1), y: 8 },
+    { x: new Date(2009, 0, 1), y: 10 },
+    { x: new Date(2010, 0, 1), y: 11 },
+    { x: new Date(2011, 0, 1), y: 13 },
   ],
   [
-    { x: new Date(2005, 0, 1), y: 28 },
-    { x: new Date(2006, 0, 1), y: 44 },
-    { x: new Date(2007, 0, 1), y: 48 },
-    { x: new Date(2008, 0, 1), y: 50 },
-    { x: new Date(2009, 0, 1), y: 66 },
-    { x: new Date(2010, 0, 1), y: 78 },
-    { x: new Date(2011, 0, 1), y: 84 },
+    { x: new Date(2005, 0, 1), y: 8 },
+    { x: new Date(2006, 0, 1), y: 6 },
+    { x: new Date(2007, 0, 1), y: 3 },
+    { x: new Date(2008, 0, 1), y: 2 },
+    { x: new Date(2009, 0, 1), y: 5 },
+    { x: new Date(2010, 0, 1), y: 9 },
+    { x: new Date(2011, 0, 1), y: 10 },
   ],
 
   [
-    { x: new Date(2005, 0, 1), y: 10 },
+    { x: new Date(2005, 0, 1), y: 1 },
+    { x: new Date(2006, 0, 1), y: 5 },
+    { x: new Date(2007, 0, 1), y: 6 },
+    { x: new Date(2008, 0, 1), y: 4 },
+    { x: new Date(2009, 0, 1), y: 7 },
+    { x: new Date(2010, 0, 1), y: 10 },
+    { x: new Date(2011, 0, 1), y: 14 },
+  ],
+];
+export const lineChartDataTemperature = [
+  [
+    { x: new Date(2005, 0, 1), y: 0 },
     { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 30 },
-    { x: new Date(2008, 0, 1), y: 39 },
+    { x: new Date(2007, 0, 1), y: 36 },
+    { x: new Date(2008, 0, 1), y: 48 },
     { x: new Date(2009, 0, 1), y: 50 },
-    { x: new Date(2010, 0, 1), y: 70 },
+    { x: new Date(2010, 0, 1), y: 55 },
+    { x: new Date(2011, 0, 1), y: 58 },
+  ],
+  [
+    { x: new Date(2005, 0, 1), y: 8 },
+    { x: new Date(2006, 0, 1), y: 12 },
+    { x: new Date(2007, 0, 1), y: 40 },
+    { x: new Date(2008, 0, 1), y: 32 },
+    { x: new Date(2009, 0, 1), y: 26 },
+    { x: new Date(2010, 0, 1), y: 30 },
+    { x: new Date(2011, 0, 1), y: 45 },
+  ],
+
+  [
+    { x: new Date(2005, 0, 1), y: 1 },
+    { x: new Date(2006, 0, 1), y: 15 },
+    { x: new Date(2007, 0, 1), y: 26 },
+    { x: new Date(2008, 0, 1), y: 34 },
+    { x: new Date(2009, 0, 1), y: 22 },
+    { x: new Date(2010, 0, 1), y: 45 },
+    { x: new Date(2011, 0, 1), y: 60 },
+  ],
+];
+
+export const lineChartDataLight = [
+  [
+    { x: new Date(2005, 0, 1), y: 0 },
+    { x: new Date(2006, 0, 1), y: 20 },
+    { x: new Date(2007, 0, 1), y: 36 },
+    { x: new Date(2008, 0, 1), y: 48 },
+    { x: new Date(2009, 0, 1), y: 60 },
+    { x: new Date(2010, 0, 1), y: 55 },
+    { x: new Date(2011, 0, 1), y: 80 },
+  ],
+  [
+    { x: new Date(2005, 0, 1), y: 8 },
+    { x: new Date(2006, 0, 1), y: 12 },
+    { x: new Date(2007, 0, 1), y: 40 },
+    { x: new Date(2008, 0, 1), y: 60 },
+    { x: new Date(2009, 0, 1), y: 70 },
+    { x: new Date(2010, 0, 1), y: 90 },
     { x: new Date(2011, 0, 1), y: 100 },
+  ],
+
+  [
+    { x: new Date(2005, 0, 1), y: 1 },
+    { x: new Date(2006, 0, 1), y: 15 },
+    { x: new Date(2007, 0, 1), y: 26 },
+    { x: new Date(2008, 0, 1), y: 50 },
+    { x: new Date(2009, 0, 1), y: 22 },
+    { x: new Date(2010, 0, 1), y: 45 },
+    { x: new Date(2011, 0, 1), y: 20 },
   ],
 ];
 export const dropdownData = [
@@ -3268,6 +3385,87 @@ export const SparklineAreaData = [
 ];
 
 export const lineCustomSeries = [
+  { dataSource: lineChartData[0],
+    xName: 'x',
+    yName: 'y',
+    name: 'Germany',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartData[1],
+    xName: 'x',
+    yName: 'y',
+    name: 'England',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartData[2],
+    xName: 'x',
+    yName: 'y',
+    name: 'India',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+];
+
+export const lineCustomSeriesLight = [
+  { dataSource: lineChartDataLight[0],
+    xName: 'x',
+    yName: 'y',
+    name: 'Germany',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartDataLight[1],
+    xName: 'x',
+    yName: 'y',
+    name: 'England',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartDataLight[2],
+    xName: 'x',
+    yName: 'y',
+    name: 'India',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+];
+
+export const lineCustomSeriesTemperature = [
+  { dataSource: lineChartDataTemperature[0],
+    xName: 'x',
+    yName: 'y',
+    name: 'Germany',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartDataTemperature[1],
+    xName: 'x',
+    yName: 'y',
+    name: 'England',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartDataTemperature[2],
+    xName: 'x',
+    yName: 'y',
+    name: 'India',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+];
+
+export const lineCustomSeriesPh = [
   { dataSource: lineChartData[0],
     xName: 'x',
     yName: 'y',

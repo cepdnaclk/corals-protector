@@ -6,7 +6,9 @@ const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, 
   const { setIsClicked, initialState } = useStateContext();
 
   return (
+    <div data-testid="button-1">
       <button
+          
           type="button"
           onClick={() => setIsClicked(initialState)}
           style={{ backgroundColor: bgColor, color, borderRadius }}
@@ -14,6 +16,7 @@ const Button = ({ icon, bgColor, color, bgHoverColor, size, text, borderRadius, 
       >
         {icon} {text}
       </button>
+      </div>
   );
 };
 
