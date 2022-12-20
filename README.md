@@ -34,5 +34,6 @@ Authorization
 
 ## Hardware Testing
 
-
+Check each component induvidually
+checking whether each component output are correct
 
