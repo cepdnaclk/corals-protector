@@ -18,71 +18,21 @@ Our device can help measure the temperature, acidity, salinity, and sunlight onc
 
 ## Testing
 
-#Email & password validation(Unit testing)
+Email & password validation (Unit testing)
+User authentication testing (Integration testing)
+Testing using Jest For NodeJs and ReactJs 
+Testing using Postman
 
+## Security Aspects
 
-Testing for individual units and components
+Network Isolation
 
-Done during the development
+Authentication
 
-Can use Jest Javascript testing framework
+Authorization
 
-For NodeJs and React.js
-
-## Scalability&Load Testing
-
-Behaviors when a large number of users access
-
-Speed, Response time, and Stability?
-
-Jmeter tool
-
-## Security Testing
-
-Avoid Security risks
-
-Zed Attack proxy tool
-
-Open source
 
 ## Hardware Testing
 
-Check Connections 
 
-Inputs and Outputs
-
-PlatformIO
-```
-{
-  "title": "This is the title of the project",
-  "team": [
-    {
-      "name": "Team Member Name 1",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 2",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    },
-    {
-      "name": "Team Member Name 3",
-      "email": "email@eng.pdn.ac.lk",
-      "eNumber": "E/yy/xxx"
-    }
-  ],
-  "supervisors": [
-    {
-      "name": "Dr. Supervisor 1",
-      "email": "email@eng.pdn.ac.lk"
-    },
-    {
-      "name": "Supervisor 2",
-      "email": "email@eng.pdn.ac.lk"
-    }
-  ],
-  "tags": ["Web", "Embedded Systems"]
-}
-```
 
