@@ -5,7 +5,7 @@ import { lineCustomSeriesPh, LinePrimaryXAxisPh, LinePrimaryYAxisPh } from '../d
 
 const Ph = () => (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-        <ChartsHeader category="Line" title="Inflation Rate" />
+        <ChartsHeader category="Line" title="pH" />
         <div className="w-full">
             <LineChart lineCustomSeries = {lineCustomSeriesPh} XAxis = {LinePrimaryXAxisPh} YAxis={ LinePrimaryYAxisPh} />
         </div>
