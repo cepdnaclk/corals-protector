@@ -1,49 +1,49 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import Basic from '../basic_test';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Basic from '../basic_test';
 
-// import Enzyme, { shallow, render, mount } from 'enzyme';
-// import toJson from 'enzyme-to-json';
-// import Adapter from 'enzyme-adapter-react-16';
+import Enzyme, { shallow, render, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import Adapter from 'enzyme-adapter-react-16';
 
-// Enzyme.configure({ adapter: new Adapter() })
+Enzyme.configure({ adapter: new Adapter() })
 
-// import TestRenderer from 'react-test-renderer';
-// import ShallowRenderer from 'react-test-renderer/shallow';
+import TestRenderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 
-// Basic Test with React-test-renderer
-// it('renders correctly react-test-renderer', () => {
-//   const renderer = new ShallowRenderer();
-//   renderer.render(<Basic />);
-//   const result = renderer.getRenderOutput();
-//
-//   expect(result).toMatchSnapshot();
-// });
+Basic Test with React-test-renderer
+it('renders correctly react-test-renderer', () => {
+  const renderer = new ShallowRenderer();
+  renderer.render(<Basic />);
+  const result = renderer.getRenderOutput();
 
-// exports[`renders correctly enzyme 1`] = `
-// <div>
-//   <h1>
-//      Basic Test
-//   </h1>
-// </div>
-// `;
+  expect(result).toMatchSnapshot();
+});
 
-// Enzyme.configure({ adapter: new Adapter() })
+exports[`renders correctly enzyme 1`] = `
+<div>
+  <h1>
+     Basic Test
+  </h1>
+</div>
+`;
 
-// // incorrect function assignment in the onClick method
-// // will still pass the tests.
+Enzyme.configure({ adapter: new Adapter() })
 
-// test('the increment method increments count', () => {
-//   const wrapper = mount(<Counter />)
+// incorrect function assignment in the onClick method
+// will still pass the tests.
 
-//   expect(wrapper.instance().state.count).toBe(0)
+test('the increment method increments count', () => {
+  const wrapper = mount(<Counter />)
 
-//   // wrapper.find('button.counter-button').simulate('click')
-//   // wrapper.setState({count: 1})
-//   wrapper.instance().increment()
-//   expect(wrapper.instance().state.count).toBe(1)
-// })
+  expect(wrapper.instance().state.count).toBe(0)
+
+  // wrapper.find('button.counter-button').simulate('click')
+  // wrapper.setState({count: 1})
+  wrapper.instance().increment()
+  expect(wrapper.instance().state.count).toBe(1)
+})
 
 
 
