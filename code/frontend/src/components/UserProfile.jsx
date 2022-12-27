@@ -8,9 +8,12 @@ import avatar from '../data/avatar.jpg';
 import {AuthContext} from "../contexts/AuthContext";
 import {logout} from "../apiCalls";
 
+
+
 const UserProfile = () => {
 
   const { currentColor } = useStateContext();
+    const { setIsClicked, initialState } = useStateContext();
 
     let { user,isFetching, dispatch } = useContext(AuthContext);
 
@@ -18,6 +21,7 @@ const UserProfile = () => {
         logout(
             dispatch
         );
+        setIsClicked(initialState)
     };
 
   return (

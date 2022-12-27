@@ -9,10 +9,10 @@ const authRoute = require("./routes/auth");
 const deviceRoute = require("./routes/device");
 const readingRoute = require("./routes/reading");
 
-dotenv.config();
+dotenv.config()
 
 mongoose.connect(process.env.MONGO_URL, () => {
-  console.log("Connected to MongoDB");
+  console.log("Connected to MongoDB")
 });
 
 //middleware
