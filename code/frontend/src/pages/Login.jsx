@@ -1,9 +1,5 @@
 import React, {useContext, useRef} from 'react'
 
-import { User } from '../data/data';
-
-
-import {useStateContext} from "../contexts/ContextProvider";
 import { loginCall } from "../apiCalls";
 import { AuthContext } from "../contexts/AuthContext";
 
@@ -19,7 +15,7 @@ const Login = () => {
             dispatch
         );
     };
-    console.log(user)
+
     return (
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
