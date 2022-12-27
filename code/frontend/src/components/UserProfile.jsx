@@ -6,7 +6,7 @@ import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
 import {AuthContext} from "../contexts/AuthContext";
-import {loginCall} from "../apiCalls";
+import {logout} from "../apiCalls";
 
 const UserProfile = () => {
 
@@ -14,9 +14,8 @@ const UserProfile = () => {
 
     let { user,isFetching, dispatch } = useContext(AuthContext);
 
-    const handleClick = () => {
-        loginCall(
-            { email: "a@h.com", password:"11111111" },
+    const handleClick = (e) => {
+        logout(
             dispatch
         );
     };
@@ -39,12 +38,15 @@ const UserProfile = () => {
               src={avatar}
               alt="user-profile"
           />
-          <div>
-            <p className="font-semibold text-xl dark:text-gray-200">{user.username}</p>
-            <p className="text-gray-500 text-sm dark:text-gray-400">{user.phoneNO}</p>
-            <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> {user.email}</p>
-          </div>
+            { user?
+            <div>
+                <p className="font-semibold text-xl dark:text-gray-200">{user.username}</p>
+                <p className="text-gray-500 text-sm dark:text-gray-400">{user.phoneNO}</p>
+                <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> {user.email}</p>
+            </div>:""
+        }
         </div>
+
 
         <div className="mt-5">
           <button
