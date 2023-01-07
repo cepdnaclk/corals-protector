@@ -18,7 +18,7 @@ import {
     Adminpage
 } from './pages';
 
-import LineChartTest from './components/Charts/LineChartTest'
+
 
 import {useStateContext} from "./contexts/ContextProvider";
 import {AuthContext} from "./contexts/AuthContext";
@@ -113,7 +113,7 @@ function App() {
                                 <Route path="/light" element={<Light/>}/>
                                 <Route path="/temperature" element={<Temperature/>}/>
                                 <Route path="/adminpage" element={(<Adminpage/>)}/>
-                                <Route path="/chart" element={(<LineChartTest/>)}/>
+
 
 
                             </Routes>
