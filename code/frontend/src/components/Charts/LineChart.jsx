@@ -1,5 +1,15 @@
 import React from 'react';
-import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, LineSeries, DateTime, Legend, Tooltip } from '@syncfusion/ej2-react-charts';
+import {
+    ChartComponent,
+    SeriesCollectionDirective,
+    SeriesDirective,
+    Inject,
+    LineSeries,
+    DateTime,
+    Legend,
+    Tooltip,
+    Category
+} from '@syncfusion/ej2-react-charts';
 
 
 import { useStateContext } from '../../contexts/ContextProvider';
@@ -18,7 +28,7 @@ const LineChart = (props) => {
           background={currentMode === 'Dark' ? '#33373E' : '#fff'}
           legendSettings={{ background: 'white' }}
       >
-        <Inject services={[LineSeries, DateTime, Legend, Tooltip]} />
+        <Inject services={[LineSeries, DateTime, Legend,Category,Tooltip]} />
         <SeriesCollectionDirective>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           {props.lineCustomSeries.map((item, index) => <SeriesDirective key={index} {...item} />)}

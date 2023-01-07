@@ -9,6 +9,7 @@ export { default as Footer } from './Footer';
 
 export { default as UserProfile } from './UserProfile';
 export { default as LineChart } from './Charts/LineChart';
+export { default as LineChartTest } from './Charts/LineChart';
 export { default as ChartsHeader } from './ChartsHeader';
 export { default as Header } from './Header';
 export { default as Device } from './Device';

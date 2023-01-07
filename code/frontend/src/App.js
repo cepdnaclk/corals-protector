@@ -18,6 +18,8 @@ import {
     Adminpage
 } from './pages';
 
+import LineChartTest from './components/Charts/LineChartTest'
+
 import {useStateContext} from "./contexts/ContextProvider";
 import {AuthContext} from "./contexts/AuthContext";
 
@@ -83,19 +85,36 @@ function App() {
                         <div>
                             {themeSettings && (<ThemeSettings />)}
 
+                            {/*<Routes>*/}
+                            {/*    /!* dashboard  *!/*/}
+                            {/*    <Route path="/" element={(<Home/>)}/>*/}
+                            {/*    <Route path="/home" element={(<Home/>)}/>*/}
+                            {/*    <Route path="/aboutus" element={<Aboutus/>}/>*/}
+                            {/*    <Route path="/login" element={user?<Home/>:<Login/>}/>*/}
+                            {/*    <Route path="/adddevice" element={user?<AddDevice/>:<Login/>}/>*/}
+                            {/*    <Route path="/maintable" element={user?<MainTable/>:<Login/>}/>*/}
+                            {/*    <Route path="/device" element={user?<Device/>:<Login/>}/>*/}
+                            {/*    <Route path="/ph" element={user?<Ph/>:<Login/>}/>*/}
+                            {/*    <Route path="/light" element={user?<Light/>:<Login/>}/>*/}
+                            {/*    <Route path="/temperature" element={user?<Temperature/>:<Login/>}/>*/}
+                            {/*    <Route path="/adminpage" element={(<Adminpage/>)}/>*/}
+
+                            {/*</Routes>*/}
                             <Routes>
                                 {/* dashboard  */}
                                 <Route path="/" element={(<Home/>)}/>
                                 <Route path="/home" element={(<Home/>)}/>
                                 <Route path="/aboutus" element={<Aboutus/>}/>
-                                <Route path="/login" element={user?<Home/>:<Login/>}/>
-                                <Route path="/adddevice" element={user?<AddDevice/>:<Login/>}/>
-                                <Route path="/maintable" element={user?<MainTable/>:<Login/>}/>
-                                <Route path="/device" element={user?<Device/>:<Login/>}/>
-                                <Route path="/ph" element={user?<Ph/>:<Login/>}/>
-                                <Route path="/light" element={user?<Light/>:<Login/>}/>
-                                <Route path="/temperature" element={user?<Temperature/>:<Login/>}/>
+                                <Route path="/login" element={<Login/>}/>
+                                <Route path="/adddevice" element={<AddDevice/>}/>
+                                <Route path="/maintable" element={<MainTable/>}/>
+                                <Route path="/device" element={<Device/>}/>
+                                <Route path="/ph" element={<Ph/>}/>
+                                <Route path="/light" element={<Light/>}/>
+                                <Route path="/temperature" element={<Temperature/>}/>
                                 <Route path="/adminpage" element={(<Adminpage/>)}/>
+                                <Route path="/chart" element={(<LineChartTest/>)}/>
+
 
                             </Routes>
                         </div>

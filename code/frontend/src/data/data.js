@@ -148,3 +148,12 @@ export const Reading = [
     },
 ]
 
+
+export const salseData = [
+    { month: '1', sales: 35 }, { month: '2', sales: 28 },
+    { month: '3', sales: 34 }, { month: '4', sales: 32 },
+    { month: '5', sales: 40 }, { month: '6', sales: 32 },
+    { month: '7', sales: 35 }, { month: '8', sales: 55 },
+    { month: '9', sales: 38 }, { month: '10', sales: 30 },
+    { month: '11', sales: 25 }, { month: '12', sales: 32 }
+];
