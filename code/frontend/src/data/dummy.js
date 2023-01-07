@@ -385,12 +385,12 @@ export const LinePrimaryXAxis = {
 };
 
 export const LinePrimaryXAxisPh = {
-  valueType: 'DateTime',
-  labelFormat: 'y',
-  intervalType: 'Years',
+  valueType: "Category",
+  title:"Reading",
   edgeLabelPlacement: 'Shift',
   majorGridLines: { width: 0 },
   background: 'white',
+
 };
 export const LinePrimaryXAxisLight = {
   valueType: 'DateTime',
@@ -423,9 +423,7 @@ export const LinePrimaryYAxis = {
 export const LinePrimaryYAxisPh = {
   labelFormat: '{value}',
   rangePadding: 'None',
-  minimum: 0,
-  maximum: 14,
-  interval: 2,
+  title:"Ph",
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
@@ -3273,32 +3271,47 @@ export const scheduleData = [
 
 export const lineChartData = [
   [
-    { x: new Date(2005, 0, 1), y: 2 },
-    { x: new Date(2006, 0, 1), y: 5 },
-    { x: new Date(2007, 0, 1), y: 6 },
-    { x: new Date(2008, 0, 1), y: 8 },
-    { x: new Date(2009, 0, 1), y: 10 },
-    { x: new Date(2010, 0, 1), y: 11 },
-    { x: new Date(2011, 0, 1), y: 13 },
+    { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 1 },
+    { Reading: '3', Ph: 2 }, { Reading: '4', Ph: 3 },
+    { Reading: '5', Ph: 4 }, { Reading: '6', Ph: 5 },
+    { Reading: '7', Ph: 6 }, { Reading: '8', Ph: 7 },
+    { Reading: '9', Ph: 8 }, { Reading: '10', Ph: 9 },
+    { Reading: '11', Ph: 10 }, { Reading: '12', Ph: 11 },
+    { Reading: '13', Ph: 12 }, { Reading: '14', Ph: 13 },
+    { Reading: '15', Ph: 14 }, { Reading: '16', Ph: 8 },
+    { Reading: '17', Ph: 7 }, { Reading: '18', Ph: 6 },
+    { Reading: '19', Ph: 5 }, { Reading: '20', Ph: 5 },
+    { Reading: '21', Ph: 4 }, { Reading: '22', Ph: 3 },
+    { Reading: '23', Ph: 2 }, { Reading: '24', Ph: 1 }
   ],
   [
-    { x: new Date(2005, 0, 1), y: 8 },
-    { x: new Date(2006, 0, 1), y: 6 },
-    { x: new Date(2007, 0, 1), y: 3 },
-    { x: new Date(2008, 0, 1), y: 2 },
-    { x: new Date(2009, 0, 1), y: 5 },
-    { x: new Date(2010, 0, 1), y: 9 },
-    { x: new Date(2011, 0, 1), y: 10 },
+    { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 7 },
+    { Reading: '3', Ph: 1 }, { Reading: '4', Ph: 8 },
+    { Reading: '5', Ph: 2 }, { Reading: '6', Ph: 9 },
+    { Reading: '7', Ph: 4 }, { Reading: '8', Ph: 10 },
+    { Reading: '9', Ph: 5 }, { Reading: '10', Ph: 11 },
+    { Reading: '11', Ph: 6 }, { Reading: '12', Ph: 12 },
+    { Reading: '13', Ph: 0 }, { Reading: '14', Ph: 7 },
+    { Reading: '15', Ph: 1 }, { Reading: '16', Ph: 8 },
+    { Reading: '17', Ph: 2 }, { Reading: '18', Ph: 9 },
+    { Reading: '19', Ph: 4 }, { Reading: '20', Ph: 10 },
+    { Reading: '21', Ph: 5 }, { Reading: '22', Ph: 11 },
+    { Reading: '23', Ph: 6 }, { Reading: '24', Ph: 12 }
   ],
 
   [
-    { x: new Date(2005, 0, 1), y: 1 },
-    { x: new Date(2006, 0, 1), y: 5 },
-    { x: new Date(2007, 0, 1), y: 6 },
-    { x: new Date(2008, 0, 1), y: 4 },
-    { x: new Date(2009, 0, 1), y: 7 },
-    { x: new Date(2010, 0, 1), y: 10 },
-    { x: new Date(2011, 0, 1), y: 14 },
+    { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 7 },
+    { Reading: '3', Ph: 1 }, { Reading: '4', Ph: 8 },
+    { Reading: '5', Ph: 2 }, { Reading: '6', Ph: 9 },
+    { Reading: '7', Ph: 4 }, { Reading: '8', Ph: 10 },
+    { Reading: '9', Ph: 5 }, { Reading: '10', Ph: 11 },
+    { Reading: '11', Ph: 6 }, { Reading: '12', Ph: 12 },
+    { Reading: '13', Ph: 0 }, { Reading: '14', Ph: 7 },
+    { Reading: '15', Ph: 1 }, { Reading: '16', Ph: 8 },
+    { Reading: '17', Ph: 2 }, { Reading: '18', Ph: 9 },
+    { Reading: '19', Ph: 4 }, { Reading: '20', Ph: 10 },
+    { Reading: '21', Ph: 5 }, { Reading: '22', Ph: 11 },
+    { Reading: '23', Ph: 6 }, { Reading: '24', Ph: 12 }
   ],
 ];
 export const lineChartDataTemperature = [
@@ -3467,27 +3480,24 @@ export const lineCustomSeriesTemperature = [
 
 export const lineCustomSeriesPh = [
   { dataSource: lineChartData[0],
-    xName: 'x',
-    yName: 'y',
-    name: '10.101.21102.1',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
+    xName: 'Reading',
+    yName: 'Ph',
+    name: 'Location1',
+    marker: { visible: true},
     type: 'Line' },
 
   { dataSource: lineChartData[1],
-    xName: 'x',
-    yName: 'y',
-    name: '10.101.25222.1',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
+    xName: 'Reading',
+    yName: 'Ph',
+    name: 'Location2',
+    marker: { visible: true},
     type: 'Line' },
 
   { dataSource: lineChartData[2],
-    xName: 'x',
-    yName: 'y',
-    name: '10.101.26532.1',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
+    xName: 'Reading',
+    yName: 'Ph',
+    name: 'Location3',
+    marker: { visible: true},
     type: 'Line' },
 
 ];
