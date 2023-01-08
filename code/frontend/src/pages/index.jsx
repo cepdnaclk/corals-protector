@@ -7,6 +7,8 @@ export { default as Ph} from './Ph'
 export { default as Light} from './Light'
 export { default as Temperature} from './Temperature'
 export { default as Adminpage} from './Adminpage'
+export { default as RegisterUser} from './RegisterUser'
+export { default as RegisterDevice} from './RegisterDevice'
 
 
 

@@ -56,12 +56,22 @@ router.put("/:id/addDevice", async (req, res) => {
   //param id is device id
   if (req.params.id !== null) {
     try {
-      const currentUser = await User.findById(req.body.userId);
-      if (!currentUser.devices.includes(req.params.id)) {
-        await currentUser.updateOne({ $push: { devices: req.params.id } });
+      const currentUser = await User.findById(req.params.id);
+
+      const device = await User.findOne({ deviceCode: req.body.deviceCode });
+      !device && res.status(404).json("device not found");
+
+      const validPassword = await bcrypt.compare(
+          req.body.password,
+          device.password
+      );
+      !validPassword && res.status(400).json("wrong password");
+
+      if (!currentUser.devices.includes(req.body.deviceCode )) {
+        await currentUser.updateOne({ $push: { devices: req.body.deviceCode  } });
         res.status(200).json("device has been added");
       } else {
-        res.status(403).json("you allready have this device");
+        res.status(403).json("you already have this device");
       }
     } catch (err) {
       res.status(500).json(err);
