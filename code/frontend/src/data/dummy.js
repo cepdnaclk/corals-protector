@@ -24,21 +24,24 @@ export const LinePrimaryXAxisPh = {
 
 };
 export const LinePrimaryXAxisLight = {
-  valueType: 'DateTime',
+  valueType: 'Category',
   labelFormat: 'y',
-  intervalType: 'Years',
+  title:"Reading",
   edgeLabelPlacement: 'Shift',
   majorGridLines: { width: 0 },
   background: 'white',
+
 };
 export const LinePrimaryXAxisTemperature = {
-  valueType: 'DateTime',
+  valueType: "Category",
+  title:"Reading",
   labelFormat: 'y',
-  intervalType: 'Years',
   edgeLabelPlacement: 'Shift',
   majorGridLines: { width: 0 },
   background: 'white',
 };
+
+
 
 export const LinePrimaryYAxis = {
   labelFormat: '{value}%',
@@ -55,9 +58,14 @@ export const LinePrimaryYAxisPh = {
   labelFormat: '{value}',
   rangePadding: 'None',
   title:"Ph",
+  minimum: 0,
+  maximum: 14,
+  interval: 2,
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
+
+
 };
 export const LinePrimaryYAxisTemperature = {
   labelFormat: '{value} °C',
@@ -70,7 +78,7 @@ export const LinePrimaryYAxisTemperature = {
   minorTickLines: { width: 0 },
 };
 export const LinePrimaryYAxisLight = {
-  labelFormat: '{value}%',
+  labelFormat: '{value}',
   rangePadding: 'None',
   minimum: 0,
   maximum: 100,
@@ -95,6 +103,10 @@ export const links = [
       {
         name: 'AboutUs',
         icon: <GiWaveSurfer />,
+      },
+      {
+        name: 'AddDevice',
+        icon: <TbDeviceHeartMonitor />,
       },
     ],
   },
@@ -384,7 +396,7 @@ export const readingsData = [
 export const lineChartData = [
   [
     { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 1 },
-    { Reading: '3', Ph: 2 }, { Reading: '4', Ph: 3 },
+    { Reading: '3', Ph: 3 }, { Reading: '4', Ph: 3 },
     { Reading: '5', Ph: 4 }, { Reading: '6', Ph: 5 },
     { Reading: '7', Ph: 6 }, { Reading: '8', Ph: 7 },
     { Reading: '9', Ph: 8 }, { Reading: '10', Ph: 9 },
@@ -397,94 +409,94 @@ export const lineChartData = [
     { Reading: '23', Ph: 2 }, { Reading: '24', Ph: 1 }
   ],
   [
-    { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 7 },
-    { Reading: '3', Ph: 1 }, { Reading: '4', Ph: 8 },
-    { Reading: '5', Ph: 2 }, { Reading: '6', Ph: 9 },
-    { Reading: '7', Ph: 4 }, { Reading: '8', Ph: 10 },
-    { Reading: '9', Ph: 5 }, { Reading: '10', Ph: 11 },
-    { Reading: '11', Ph: 6 }, { Reading: '12', Ph: 12 },
-    { Reading: '13', Ph: 0 }, { Reading: '14', Ph: 7 },
-    { Reading: '15', Ph: 1 }, { Reading: '16', Ph: 8 },
-    { Reading: '17', Ph: 2 }, { Reading: '18', Ph: 9 },
-    { Reading: '19', Ph: 4 }, { Reading: '20', Ph: 10 },
-    { Reading: '21', Ph: 5 }, { Reading: '22', Ph: 11 },
-    { Reading: '23', Ph: 6 }, { Reading: '24', Ph: 12 }
+    { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 2 },
+    { Reading: '3', Ph: 4 }, { Reading: '4', Ph: 8 },
+    { Reading: '5', Ph: 9 }, { Reading: '6', Ph: 9 },
+    { Reading: '7', Ph: 9 }, { Reading: '8', Ph: 10 },
+    { Reading: '9', Ph: 11}, { Reading: '10', Ph: 11 },
+    { Reading: '11', Ph: 12 }, { Reading: '12', Ph: 13 },
+    { Reading: '13', Ph: 13 }, { Reading: '14', Ph: 14 },
+    { Reading: '15', Ph: 12 }, { Reading: '16', Ph: 10 },
+    { Reading: '17', Ph: 9 }, { Reading: '18', Ph: 9 },
+    { Reading: '19', Ph: 8 }, { Reading: '20', Ph: 7 },
+    { Reading: '21', Ph: 6 }, { Reading: '22', Ph: 5 },
+    { Reading: '23', Ph: 4 }, { Reading: '24', Ph: 3 }
   ],
 
   [
-    { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 7 },
-    { Reading: '3', Ph: 1 }, { Reading: '4', Ph: 8 },
-    { Reading: '5', Ph: 2 }, { Reading: '6', Ph: 9 },
-    { Reading: '7', Ph: 4 }, { Reading: '8', Ph: 10 },
-    { Reading: '9', Ph: 5 }, { Reading: '10', Ph: 11 },
-    { Reading: '11', Ph: 6 }, { Reading: '12', Ph: 12 },
-    { Reading: '13', Ph: 0 }, { Reading: '14', Ph: 7 },
-    { Reading: '15', Ph: 1 }, { Reading: '16', Ph: 8 },
-    { Reading: '17', Ph: 2 }, { Reading: '18', Ph: 9 },
-    { Reading: '19', Ph: 4 }, { Reading: '20', Ph: 10 },
-    { Reading: '21', Ph: 5 }, { Reading: '22', Ph: 11 },
-    { Reading: '23', Ph: 6 }, { Reading: '24', Ph: 12 }
+    { Reading: '1', Ph: 0 }, { Reading: '2', Ph: 4 },
+    { Reading: '3', Ph: 5 }, { Reading: '4', Ph: 6 },
+    { Reading: '5', Ph: 8 }, { Reading: '6', Ph: 9 },
+    { Reading: '7', Ph: 10 }, { Reading: '8', Ph: 10 },
+    { Reading: '9', Ph: 11 }, { Reading: '10', Ph: 11 },
+    { Reading: '11', Ph: 12 }, { Reading: '12', Ph: 12 },
+    { Reading: '13', Ph: 9 }, { Reading: '14', Ph: 5 },
+    { Reading: '15', Ph: 4 }, { Reading: '16', Ph: 4 },
+    { Reading: '17', Ph: 4 }, { Reading: '18', Ph: 4 },
+    { Reading: '19', Ph: 4 }, { Reading: '20', Ph: 3 },
+    { Reading: '21', Ph: 2 }, { Reading: '22', Ph: 1 },
+    { Reading: '23', Ph: 1 }, { Reading: '24', Ph: 0 }
   ],
 ];
 export const lineChartDataTemperature = [
   [
-    { x: new Date(2005, 0, 1), y: 0 },
-    { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 48 },
-    { x: new Date(2009, 0, 1), y: 50 },
-    { x: new Date(2010, 0, 1), y: 55 },
-    { x: new Date(2011, 0, 1), y: 58 },
+    { x: 1, y: 0 },
+    { x: 2, y: 20 },
+    { x: 3, y: 36 },
+    { x: 4, y: 48 },
+    { x: 5, y: 50 },
+    { x: 6, y: 55 },
+    { x: 7, y: 58 },
   ],
   [
-    { x: new Date(2005, 0, 1), y: 8 },
-    { x: new Date(2006, 0, 1), y: 12 },
-    { x: new Date(2007, 0, 1), y: 40 },
-    { x: new Date(2008, 0, 1), y: 32 },
-    { x: new Date(2009, 0, 1), y: 26 },
-    { x: new Date(2010, 0, 1), y: 30 },
-    { x: new Date(2011, 0, 1), y: 45 },
+    { x: 1, y: 8 },
+    { x: 2, y: 12 },
+    { x: 3, y: 40 },
+    { x: 4, y: 32 },
+    { x: 5, y: 26 },
+    { x: 6, y: 30 },
+    { x: 7, y: 45 },
   ],
 
   [
-    { x: new Date(2005, 0, 1), y: 1 },
-    { x: new Date(2006, 0, 1), y: 15 },
-    { x: new Date(2007, 0, 1), y: 26 },
-    { x: new Date(2008, 0, 1), y: 34 },
-    { x: new Date(2009, 0, 1), y: 22 },
-    { x: new Date(2010, 0, 1), y: 45 },
-    { x: new Date(2011, 0, 1), y: 60 },
+    { x: 1, y: 1 },
+    { x: 2, y: 15 },
+    { x: 3, y: 26 },
+    { x: 4, y: 34 },
+    { x: 5, y: 22 },
+    { x: 6, y: 45 },
+    { x: 7, y: 60 },
   ],
 ];
 
 export const lineChartDataLight = [
   [
-    { x: new Date(2005, 0, 1), y: 0 },
-    { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 48 },
-    { x: new Date(2009, 0, 1), y: 60 },
-    { x: new Date(2010, 0, 1), y: 55 },
-    { x: new Date(2011, 0, 1), y: 80 },
+    { x: 1, y: 0 },
+    { x: 2, y: 20 },
+    { x: 3, y: 36 },
+    { x: 4, y: 48 },
+    { x: 5, y: 60 },
+    { x: 6, y: 55 },
+    { x: 7, y: 80 },
   ],
   [
-    { x: new Date(2005, 0, 1), y: 8 },
-    { x: new Date(2006, 0, 1), y: 12 },
-    { x: new Date(2007, 0, 1), y: 40 },
-    { x: new Date(2008, 0, 1), y: 60 },
-    { x: new Date(2009, 0, 1), y: 70 },
-    { x: new Date(2010, 0, 1), y: 90 },
-    { x: new Date(2011, 0, 1), y: 100 },
+    { x: 1, y: 8 },
+    { x: 2, y: 12 },
+    { x: 3, y: 40 },
+    { x: 4, y: 60 },
+    { x: 5, y: 70 },
+    { x: 6, y: 90 },
+    { x: 7, y: 100 },
   ],
 
   [
-    { x: new Date(2005, 0, 1), y: 1 },
-    { x: new Date(2006, 0, 1), y: 15 },
-    { x: new Date(2007, 0, 1), y: 26 },
-    { x: new Date(2008, 0, 1), y: 50 },
-    { x: new Date(2009, 0, 1), y: 22 },
-    { x: new Date(2010, 0, 1), y: 45 },
-    { x: new Date(2011, 0, 1), y: 20 },
+    { x: 1, y: 1 },
+    { x: 2, y: 15 },
+    { x: 3, y: 26 },
+    { x: 4, y: 50 },
+    { x: 5, y: 22 },
+    { x: 6, y: 45 },
+    { x: 7, y: 20 },
   ],
 ];
 
@@ -553,6 +565,7 @@ export const lineCustomSeriesTemperature = [
     marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
 
+
   { dataSource: lineChartDataTemperature[1],
     xName: 'x',
     yName: 'y',
@@ -576,22 +589,25 @@ export const lineCustomSeriesPh = [
     xName: 'Reading',
     yName: 'Ph',
     name: 'Location1',
-    marker: { visible: true},
-    type: 'Line' },
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line'  },
 
   { dataSource: lineChartData[1],
     xName: 'Reading',
     yName: 'Ph',
     name: 'Location2',
-    marker: { visible: true},
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
     type: 'Line' },
 
   { dataSource: lineChartData[2],
     xName: 'Reading',
     yName: 'Ph',
     name: 'Location3',
-    marker: { visible: true},
-    type: 'Line' },
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line'  },
 
 ];
 
