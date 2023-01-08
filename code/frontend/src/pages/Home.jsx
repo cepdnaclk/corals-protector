@@ -1,9 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {FiSettings} from "react-icons/fi";
 import {useStateContext} from "../contexts/ContextProvider";
 import { useNavigate } from "react-router-dom";
+import {AuthContext} from "../contexts/AuthContext";
+
 
 const Home = () => {
+    const {user} = useContext(AuthContext)
     const {
         setCurrentColor,
         setCurrentMode,
@@ -41,6 +44,7 @@ const Home = () => {
                                     enough to be
                                     simple and quick.</p>
                                 <div className="mt-12" >
+                                    {user?"":
                                     <button
                                         type="button"
                                         onClick={() => navigate("/login")}
@@ -48,15 +52,33 @@ const Home = () => {
                                         className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
                                     >
                                         Sign In
-                                    </button>
-                                    <button
+                                    </button>}
+                                    {(user && user.isAdmin)?
+                                        <button
+                                            type="button"
+                                            onClick={() => navigate("/registeruser")}
+                                            style={{background: currentColor, borderRadius: '5%' , margin:'1%'}}
+                                            className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
+                                        >
+                                            Register User
+                                        </button>:""}
+                                    {(user && user.isAdmin)?<button
                                         type="button"
-                                        onClick={() => navigate("/aboutus")}
-                                        style={{background: currentColor, borderRadius: '5%' , margin:'1%'}}
+                                        onClick={() => navigate("/registerdevice")}
+                                        style={{background: currentColor, borderRadius: '5%', margin: '1%'}}
                                         className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
                                     >
-                                        About Us
-                                    </button>
+                                            Register Device
+                                    </button>:
+                                        <button
+                                            type="button"
+                                            onClick={() => navigate("/aboutus")}
+                                            style={{background: currentColor, borderRadius: '5%', margin: '1%'}}
+                                            className="text-2xl text-white p-2 hover:drop-shadow-xl hover:bg-light-gray"
+                                        >
+                                            About Us
+                                        </button>
+                                    }
                                 </div>
 
                             </div>

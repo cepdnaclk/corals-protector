@@ -1,4 +1,5 @@
 import React, {useContext, useRef} from 'react'
+import {useNavigate} from "react-router-dom"
 
 import { loginCall } from "../apiCalls";
 import { AuthContext } from "../contexts/AuthContext";
@@ -7,6 +8,7 @@ const Login = () => {
     const email = useRef();
     const password = useRef();
     const { user,isFetching, dispatch } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -14,14 +16,13 @@ const Login = () => {
             { email: email.current.value, password: password.current.value },
             dispatch
         );
+        navigate("/")
     };
 
     return (
         <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="w-full max-w-md space-y-8">
                 <div>
-                    <img className="mx-auto h-12 w-auto"
-                         src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
                         <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your
                             account</h2>
 
