@@ -1,5 +1,6 @@
 // Dependencies
 const awsIot = require("aws-iot-device-sdk");
+const SensorReading = require("./models/Reading");
 
 let device;
 function run() {
@@ -24,7 +25,9 @@ function run() {
     // Set handler for the device, it will get the messages from subscribers topics.
     device.on("message", function (topic, payload) {
         const data = JSON.parse(payload.toString());
-        console.log(data)
+        if (data) {
+            add(data);
+        }
     });
 
     device.on("error", function (topic, payload) {
@@ -32,6 +35,20 @@ function run() {
     });
 }
 
+function add(data) {
+    try {
+        // Create a new sensor reading
+        const reading = new SensorReading({
+            temperature: data.temperature,
+            lightIntensity: data.heartRate,
+        });
+        // Save the reading to the database
+        const read = reading.save();
+        console.log("New reading added to collection")
+    } catch (error) {
+        console.log("can not add the reading")
+    }
+}
 
 
 function sendData() {
