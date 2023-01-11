@@ -2,28 +2,25 @@ const mongoose = require("mongoose");
 
 const ReadingSchema = new mongoose.Schema(
   {
-    deviceId: {
-      type: String,
-      required: true,
-    },
+      deviceCode: {
+          type: String,
+          required: true,
+      },
     temperature: {
-      type: Number,
-      required: true,
+        type: Array,
+        default: [],
     },
     lightIntensity: {
-      type: Number,
-      required: true,
+        type: Array,
+        default: [],
     },
-    locations: [
-      {
-        longitude: {
-          type: Number,
-        },
-        latitude: {
-          type: Number,
-        },
+      pH: {
+          type: Array,
+          default: [],
       },
-    ],
+    locations: {
+        type: String,
+    },
   },
   { timestamps: true }
 );

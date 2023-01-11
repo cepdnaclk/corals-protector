@@ -7,14 +7,16 @@ router.post("/sensor-reading", async (req, res) => {
   try {
     // Create a new sensor reading
     const reading = new SensorReading({
+      deviceCode: req.body.deviceCode,
       temperature: req.body.temperature,
-      humidity: req.body.humidity,
-      timestamp: new Date(),
+      lightIntensity: req.body.lightIntensity,
+      pH: req.body.pH,
+      locations: req.body.locations,
     });
 
     // Save the reading to the database
-    await reading.save();
-    res.status(201).json("Save the reading to the database");
+    const read = await reading.save();
+    res.status(201).json(read);
   } catch (error) {
     res.sendStatus(500);
   }
