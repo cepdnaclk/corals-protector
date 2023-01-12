@@ -36,18 +36,25 @@ function run() {
 }
 
 function add(data) {
-    try {
-        // Create a new sensor reading
-        const reading = new SensorReading({
-            temperature: data.temperature,
-            lightIntensity: data.heartRate,
-        });
-        // Save the reading to the database
-        const read = reading.save();
-        console.log("New reading added to collection")
-    } catch (error) {
-        console.log("can not add the reading")
-    }
+    console.log(data)
+    // try {
+    //     //Create a new sensor reading
+    //     const reading = new SensorReading({
+    //         deviceCode: data.deviceCode,
+    //         temperature: data.temperature,
+    //         lightIntensity: data.lightIntensity,
+    //         pH: data.pH,
+    //         locations: data.locations,
+    //     });
+    //
+    //
+    //     // const reading = new SensorReading(data);
+    //     // Save the reading to the database
+    //     const read = reading.save();
+    //     console.log("New reading added to collection")
+    // } catch (error) {
+    //     console.log("can not add the reading")
+    // }
 }
 
 

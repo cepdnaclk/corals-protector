@@ -6,10 +6,12 @@ const deviceSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+      userID: {
+          type: String,
+      },
     password: {
       type: String,
       required: true,
-      min: 6,
     },
   },
   { timestamps: true }

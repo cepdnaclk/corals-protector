@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 
 const ReadingSchema = new mongoose.Schema(
   {
+      userID: {
+          type: String,
+      },
       deviceCode: {
           type: String,
           required: true,
