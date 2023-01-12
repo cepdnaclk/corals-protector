@@ -15,7 +15,7 @@ import {
     Ph,
     Temperature,
     Light,
-    Adminpage, RegisterUser , RegisterDevice
+    Adminpage, RegisterUser , RegisterDevice,GetdataTest
 } from './pages';
 
 
@@ -99,6 +99,7 @@ function App() {
                                 <Route path="/adminpage" element={(<Adminpage/>)}/>
                                 <Route path="/registeruser" element={(<RegisterUser/>)}/>
                                 <Route path="/registerdevice" element={(<RegisterDevice/>)}/>
+                                <Route path="/getdatatest" element={(<GetdataTest/>)}/>
 
                             </Routes>
                             {/*<Routes>*/}

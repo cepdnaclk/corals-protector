@@ -11,6 +11,7 @@ router.post("/register", async (req, res) => {
 
     //create new device
     const newDevice = new Device({
+      userID:req.body.userID,
       deviceCode: req.body.code,
       password: hashedPassword,
     });
@@ -34,6 +35,17 @@ router.get("/all", function (req, res) {
 
     res.send(deviceMap);
   });
+});
+
+//get user's all posts
+
+router.get("/alldevice/:username", async (req, res) => {
+  try {
+    const devices = await Device.find({ userID: req.params.username });
+    res.status(200).json(devices);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 //update device
