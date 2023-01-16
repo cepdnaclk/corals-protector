@@ -367,21 +367,21 @@
 		<br><br><br><br>
 		<section id="Software" class="about-area pt-115">
 			<div class="container">
-				<div class="row justify-content-center">
+				<!-- <div class="row justify-content-center">
 					<div class="col-lg-9">
 						<div class="about-content pt-45" data-wow-duration="1s" data-wow-delay="0.3s">
 							<h1 class="welcome" style="text-align:center"><span>ER Diagram</span></h1><br>
 						</div>
 					</div>
-				</div> <!-- row -->
-				<div align="center">
+				</div> --> <!-- row -->
+				<!-- <div align="center">
 					<div class="col-lg-12">
 						<div class="about-image mt-60 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"
 							style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;">
 							<img src="assets/img/er_diagram.PNG" width="1000" alt="ER" style="text-align:center">
-						</div> <!-- about image -->
+						</div> 
 					</div>
-				</div> <!-- row -->
+				</div> --> <!-- row -->
 
 				<!-- Hardware Solution -->
 				<section class="section" id="Hardware">
@@ -464,23 +464,13 @@
 							<div class="container">
 								<div class="row align-items-center">
 									<div class="col-md-4 me-auto">
-										<h2 class="mb-4">PIR Sensor</h2>
-										<p class="mb-4">Passive Infrared Sensor commanly known as Proximity motion
-											sensor. PIR sensors are
-											used to detect the movements. It functioning by absorbing the IR rays emits
-											from the objects.
-											Humans and animals emit the IR radiation other than that the hot objects
-											also emits the IR rays so
-											IR sensor detect the movements of the objects. Many variety of sensors in
-											the market they vary
-											with price, sensitivity and range. For this project we HC-SR501. Because it
-											mid range wide, angle,
-											good sensitivity and cheap
+										<h2 class="mb-4">pH Sensor</h2>
+										<p class="mb-4">A pH sensor is a device that measures the acidity or basicity (alkalinity) of a solution. The pH scale ranges from 0 to 14, with 7 being neutral, less than 7 being acidic, and greater than 7 being basic. pH sensors typically use a glass electrode and a reference electrode to measure the pH of a solution.
 											<br><br>
-											<a
-												href="https://cdn-learn.adafruit.com/downloads/pdf/pir-passive-infrared-proximity-motion-sensor.pdf">
-												Referense Link</a><br>
-											<a href="#Hardware">Hardware Model</a>
+											<!-- <a
+												href="https://robocraze.com/blogs/post/all-about-ph-sensor">
+												Referense Link</a> --><br>
+											<!-- <a href="#Hardware">Hardware Model</a> -->
 										</p>
 									</div>
 									<div class="col-md-6" data-aos="fade-left">
@@ -499,21 +489,18 @@
 							<div class="container">
 								<div class="row align-items-center">
 									<div class="col-md-4 me-auto">
-										<h2 class="mb-4">Current Sensor</h2>
-										<p class="mb-4">ACS 712 Current sensor used to measure the current using the
-											Hall-Effect princile.
-											Many current sensors are in the market but we selected this because of it's
-											size and accuraccy.
-											it's so small but it can measure up to 30A and the energy wastage is
-											negligible.
+										<h2 class="mb-4">LDR Sensor</h2>
+										<p class="mb-4">A Light Dependent Resistor (LDR) sensor is a type of resistor that changes its resistance based on the amount of light that it is exposed to. LDRs are also known as photo resistors or photocells. They are typically made of cadmium sulfide (CdS) and are sensitive to visible light. When the level of light falling on the LDR increases, the resistance of the LDR decreases, and when the light level decreases, the resistance of the LDR increases. LDRs are commonly used in applications such as light level detection, automatic lighting control, and camera light meters. They are also used in burglar alarms, street light control systems, and other similar applications.
 											<br>
 										<ul>
-											<li>30 A module</li>
-											<li>5V Operating Voltage</li>
-											<li>Scale factor 100 mV per Amp</li>
+											<li>VCC: 5V
+												</li>
+											<li>range: 0-14
+												</li>
+											<li>need calibration</li>
 											<br><br>
-											<a href="https://www.robotics.org.za/6970622932567"> Referense Link</a><br>
-											<a href="#Hardware">Hardware Model</a>
+											<!-- <a href="https://www.robotics.org.za/6970622932567"> Referense Link</a> --><br>
+											<!-- <a href="#Hardware">Hardware Model</a> -->
 											</p>
 									</div>
 									<div class="col-md-6" data-aos="fade-left">
@@ -533,24 +520,27 @@
 							<div class="container">
 								<div class="row align-items-center">
 									<div class="col-md-4 me-auto">
-										<h2 class="mb-4">Voltage Sensor</h2>
-										<p class="mb-4">ZMPT101b is a voltage sensor which accurate and small in size
-											and best suited for
-											the
-											IoT developments.
+										<h2 class="mb-4">Template sensor</h2>
+										<p class="mb-4">A temperature sensor is a device that measures the temperature of a physical object or ambient environment. There are several types of temperature sensors, including thermocouples, resistance temperature detectors (RTDs), thermistors, and infrared sensors.
 											<br>
 										<ul>
-											<li>Measure up to 250 V</li>
-											<li>Operating Voltage: DC 5V-30V</li>
-											<li>Output Signal: Analog 0-5V</li>
+											<li>Waterproof Digital Sensor
+												</li>
+											<li>VCC: 3V ~ 5V
+												</li>
+											<li>range: -55~+125 C
+												</li>
+												<li>accuracy 0.5V
+													</li>
+													<li>need calibration.</li>
 											<br><br>
-											<a href="https://www.robotics.org.za/6970622932567"> Referense Link</a><br>
-											<a href="#Hardware">Hardware Model</a>
+											<!-- <a href="https://www.robotics.org.za/6970622932567"> Referense Link</a><br>
+											<a href="#Hardware">Hardware Model</a> -->
 											</p>
 
 									</div>
 									<div class="col-md-6" data-aos="fade-left">
-										<img src="images/Hardware/AC-voltage-sensor.jpg" alt="Image" class="img-fluid">
+										<img src="images/Hardware/temp.jpeg" alt="Image" class="img-fluid">
 									</div>
 								</div>
 							</div>
@@ -563,25 +553,16 @@
 							<div class="container">
 								<div class="row align-items-center">
 									<div class="col-md-4 me-auto">
-										<h2 class="mb-4">3-3.3V Relay </h2>
+										<h2 class="mb-4">NEO_6M GPS MODULE</h2>
 										<p class="mb-4">
-											Relay is an electrically operated switch. It consists of a set of input
-											terminals for a
-											signal or multiple control signals, and a set of operating contact
-											terminals. The
-											switch may have any number of contacts or multiple contact forms, such as
-											make
-											contacts, break contacts, or combinations thereof.
-											<br>
-											Relay are used where it is necessary to control a circuit by an independent
-											low-power
-											signal, or where several circuits must be controlled by one signal.
+											The NEO-6M GPS module is a small, compact module that is designed to receive signals from GPS satellites and provide location information, such as latitude, longitude, and altitude. It is based on the u-blox NEO-6M GPS chip, which is known for its high sensitivity and fast time-to-first-fix.
+The module typically communicates with the host device (such as a microcontroller or computer) using a serial interface, and can output data in various formats such as NMEA or UBX. It can also output data at different baud rates.
 											<br><br>
-											<a
+											<!-- <a
 												href="https://datasheet.octopart.com/MAX4822ETP%2B-Maxim-datasheet-8430178.pdf">
 												Referense
-												Link</a><br>
-											<a href="#Hardware">Hardware Model</a>
+												Link</a> --><br>
+											<!-- <a href="#Hardware">Hardware Model</a> -->
 										</p>
 									</div>
 									<div class="col-md-6" data-aos="fade-left">
@@ -599,24 +580,17 @@
 							<div class="container">
 								<div class="row align-items-center">
 									<div class="col-md-4 me-auto">
-										<h2 class="mb-4">AC Dimmer</h2>
+										<h2 class="mb-4">16 x 2 LCD</h2>
 										<p class="mb-4">
-											The AC Dimmer is designed to control the alternating current voltage,
-											which can transfer current up to 400V/8А. In most cases, Dimmer is used to
-											turning the power ON/OFF for lamps or heating elements, it can also be used
-											in
-											fans, pumps, air cleaners, e.t.c. Lately, Dimmer has become an often-used
-											decision
-											for smart home systems. For example, when you need to smoothly change the
-											light brightness.
+											A 16 x 2 LCD (liquid crystal display) is a type of display device that uses liquid crystals to display text or other information. It consists of a matrix of dots or pixels that can be activated to display various characters or symbols.
 											<br>
 										<ul>
-											<li>Power : up to 400V/600V (8A~24A)</li>
+											<!-- <li>Power : up to 400V/600V (8A~24A)</li>
 											<li>Operating Voltage 0 - 3.3 V</li>
-											<li>Current signal > 10mA</li>
+											<li>Current signal > 10mA</li> -->
 											<br><br>
-											<a href="https://www.robotics.org.za/6970622932567"> Referense Link</a><br>
-											<a href="#Hardware">Hardware Model</a>
+										<!-- 	<a href="https://www.robotics.org.za/6970622932567"> Referense Link</a> --><br>
+										<!-- 	<a href="#Hardware">Hardware Model</a> -->
 											</p>
 									</div>
 									<div class="col-md-6" data-aos="fade-left">
@@ -714,9 +688,10 @@
 								<h2 class="mb-4">Software Model</h2>
 								<p class="mb-4">
 								<Ul>
-									<li><a href="">Flutter</a></li>
+									<li><a href="">React.js</a></li>
 									<li><a href="">Node.js</a></li>
 									<li><a href="">MongodB</a></li>
+									<li><a href="">Express.js</a></li>
 									<li><a href="">MQTT</a></li>
 									<li><a href="">AWS-Cloud</a></li>
 
@@ -802,44 +777,43 @@
 							</div>
 						</div>
 						<div class="team">
-							<!-- Arshad -->
+				
 							<div class="member">
-								<img src="images/team/WhatsApp Image 2021-07-31 at 7.35.02 PM.jpeg" alt="Arshad"
+								<img src="images/team/abilash.jpg" alt="Abilash"
 									id="mentimg">
 								<br><br>
-								<p><a href=""><img src="images/logos/GitHub-Mark.png" alt="github" id="logo_s"></a>
-									<a href="www.linkedin.com/in/muhammed-arshad-127537159">
+								<p><a href="https://github.com/RavindranAbilash"><img src="images/logos/GitHub-Mark.png" alt="github" id="logo_s"></a>
+									<a href="https://www.linkedin.com/in/ravindran-abilash/">
 										<img src="images/logos/linkedin-logo-png-1853.png" alt="Linkdin"
 											id="logo_s"></a>
-									<b>Arshad MRM &nbsp; E/17/015</b>
-									<a href=""><img src="images/logos/icons8-website-96.png" alt="web" id="logo_s"></a>
-								</p>
+									<b>Abilash R&nbsp; E/18/013</b>
+<!-- 									<a href=""><img src="images/logos/icons8-website-96.png" alt="web" id="logo_s"></a>
+ -->								</p>
 							</div>
 
-							<!-- Nishankar -->
+						
 							<div class="member">
-								<img src="images/team/nishan.jpeg" alt="Nishankar" id="mentimg">
+								<img src="images/team/gowsi.png" alt="Gowsikan" id="mentimg">
 								<br><br>
 								<p>
-									<a href=""><img src="images/logos/GitHub-Mark.png" alt="github" id="logo_s"></a>
-									<a href=""><img src="images/logos/linkedin-logo-png-1853.png" alt="Linkdin"
+									<a href="https://github.com/AnnalingamGowsigan"><img src="images/logos/GitHub-Mark.png" alt="github" id="logo_s"></a>
+									<a href="https://www.linkedin.com/in/annalingam-gowsigan-87a3991b4/"><img src="images/logos/linkedin-logo-png-1853.png" alt="Linkdin"
 											id="logo_s"></a>
-									<b>Nishankar S &nbsp; E/17/230</b>
-									<a href=""><img src="images/logos/icons8-website-96.png" alt="web" id="logo_s"></a>
+									<b>Gowsigan A&nbsp; E/17/230</b>
+									<!-- <a href=""><img src="images/logos/icons8-website-96.png" alt="web" id="logo_s"></a> -->
 								</p>
 							</div>
-
-							<!-- Varnaraj -->
+A
 							<div class="member">
-								<img src="images/team/varna.jpeg" alt="Varnaraj" id="mentimg">
+								<img src="images/team/thulasi.jpg" alt="Thulasiyan" id="mentimg">
 								<br><br>
 								<p>
-									<a href=""><img src="images/logos/GitHub-Mark.png" alt="github" id="logo_s"></a>
-									<a href=""><img src="images/logos/linkedin-logo-png-1853.png" alt="Linkdin"
+									<a href="https://github.com/SyThulasi"><img src="images/logos/GitHub-Mark.png" alt="github" id="logo_s"></a>
+									<a href="https://www.linkedin.com/in/thulasiyan-yogeswaran-5ba1221a4/"><img src="images/logos/linkedin-logo-png-1853.png" alt="Linkdin"
 											id="logo_s"></a>
-									<b>Varnaraj N &nbsp; E/17/358</b>
-									<a href=""><img src="images/logos/icons8-website-96.png" alt="web" id="logo_s"></a>
-								<p>
+									<b>Thulasiyan Y&nbsp; E/18/366</b>
+<!-- 									<a href=""><img src="images/logos/icons8-website-96.png" alt="web" id="logo_s"></a>
+ -->								<p>
 							</div>
 						</div>
 					</div>
@@ -886,7 +860,7 @@
 				</section><!-- End Testimonials Section -->
 
 				<!-- ======= CTA Section ======= -->
-				<section class="section cta-section">
+				<!-- <section class="section cta-section">
 					<div class="container">
 						<div class="row align-items-center">
 							<div class="col-md-6 me-auto text-center text-md-start mb-5 mb-md-0">
@@ -900,7 +874,7 @@
 							</div>
 						</div>
 					</div>
-				</section><!-- End CTA Section -->
+				</section> --><!-- End CTA Section -->
 
 	</main><!-- End #main -->
 
@@ -952,24 +926,38 @@
       </div>
       -->
 	<br><br>
-	<div class="row justify-content-center text-center">
+	<!-- <div class="row justify-content-center text-center">
 		<div class="col-md-7">
 			<p class="copyright">&copy; Copyright digitalHuT. All Rights Reserved</p>
 			<div class="credits">
-				<!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=SoftLand
-          -->
+				
 				Designed by <a href="https://www.pdn.ac.lk/">Students of UOP</a>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	
 
 	<br>
 	</div>
 	</footer>
+	<!-- ======= Footer ======= -->
+	<footer id="footer">
+		<div class="container">
+		  <h3>Corals Protector</h3>
+		  <p>A system will be able to Take the Measurements of Coral Growing Environmental Factors.</p>
+		<div class="row justify-content-center">
+			<ul>
+			  <li><a class="nav-link scrollto" href="https://github.com/cepdnaclk/e18-3yp-Corals-Protector">Project Repository</a></li>
+			  <li><a class="nav-link scrollto" href="http://www.ce.pdn.ac.lk/">Department of Computer Engineering</a></li>
+			  <li><a class="nav-link scrollto" href="https://eng.pdn.ac.lk/">University of Peradeniya</a></li>
+			</ul>
+		</div>
+		  <div class="copyright">
+			&copy; Copyright <strong><span>Corals Protector</span></strong>. All Rights Reserved
+		  </div>
+		  
+		</div>
+	  </footer><!-- End Footer -->
 
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
 			class="bi bi-arrow-up-short"></i></a>
