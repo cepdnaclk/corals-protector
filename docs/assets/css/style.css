@@ -313,13 +313,13 @@ section {
 
 #header.header-scrolled {
 	background: rgba(39, 70, 133, 0.8);
-	height: 60px;
+	height: auto;
 }
 
 #header .logo h1 {
 	font-size: 28px;
 	margin: 0;
-	padding: 4px 0;
+	padding: 1px 0;
 	line-height: 1;
 	font-weight: 500;
 	color: beige;
@@ -609,7 +609,7 @@ section {
 	margin-bottom: 30px;
 }
 .container {
-	padding-top: 72px;
+	padding-top: 20px;
 	position: relative;
 	text-align: center;
   }
@@ -864,4 +864,91 @@ section {
 		height: 28px;
 		width: auto;
 	}
+}
+
+
+
+.wrapper
+{
+	padding-bottom: 90px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 90px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+.div-tab-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(50% - 10px);
+	width: 20px;
+	height: 14px;
+	background-color: white;
+	border-bottom: 1px solid rgb(48,49,51);
+	border-left: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+	border-radius: 0 0 8px 8px;
+}
+
+.div-stopper:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -6px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 12px;
+	background-color: white;
+	border-left: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+.div-dot:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -9px;
+	left: calc(50% - 9px);
+	width: 18px;
+	height: 18px;
+	background-color: goldenrod;
+	border: 1px solid rgb(48,49,51);
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 2px white,
+					0 0 0 4px white;
 }
