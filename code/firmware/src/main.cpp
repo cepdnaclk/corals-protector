@@ -270,23 +270,45 @@ void setup()
   pinMode(buttonPinForGps, INPUT);    // for gps skip
 
   // calculating Gps
-  while (gps_bool_val)
+  // while (gps_bool_val)
+  // {
+  //   if (millis() > 5000 && gps.charsProcessed() < 10)
+  //   {
+  //     Serial.println(F("No GPS detected: check wiring."));
+
+  //     lcd.clear();
+  //     lcd.setCursor(0, 0);
+  //     lcd.print("No GPS detected:");
+  //     lcd.setCursor(2, 1);
+  //     lcd.print("checking ...");
+
+  //     delay(1000);
+  //   }
+
+  //   gps_bool_val = getGps();
+
+  //   buttonStateForGps = digitalRead(buttonPinForGps);
+  //   if (buttonStateForGps != lastButtonStateForGps)
+  //   {
+  //     if (buttonStateForGps == LOW)
+  //     {
+  //       delay(5000); // add debounce delay
+  //       Serial.println("meassage before gps skip button pressed................................................");
+  //       Serial.println("meassage after gps skip button pressed.................................................");
+  //       break;
+  //     }
+  //     lastButtonStateForGps = buttonStateForGps;
+  //   }
+  // }
+
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("No GPS detected:");
+  lcd.setCursor(2, 1);
+  lcd.print("checking ...");
+
+  while (true)
   {
-    if (millis() > 5000 && gps.charsProcessed() < 10)
-    {
-      Serial.println(F("No GPS detected: check wiring."));
-
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("No GPS detected:");
-      lcd.setCursor(2, 1);
-      lcd.print("checking ...");
-
-      delay(1000);
-    }
-
-    gps_bool_val = getGps();
-
     buttonStateForGps = digitalRead(buttonPinForGps);
     if (buttonStateForGps != lastButtonStateForGps)
     {
@@ -308,21 +330,21 @@ void setup()
   lcd.setCursor(3, 1);
   lcd.print("calculated");
 
-  // // for printing Location below 2 line in same location
-  char Location[50] = "";
-  snprintf(Location, 50, "Lat: %lf; Lng: %lf", latitude, longitude);
-  Serial.print("Location : ");
-  Serial.print(Location);
+  // // // for printing Location below 2 line in same location
+  // char Location[50] = "";
+  // snprintf(Location, 50, "Lat: %lf; Lng: %lf", latitude, longitude);
+  // Serial.print("Location : ");
+  // Serial.print(Location);
 
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Lat: ");
-  lcd.setCursor(5, 0);
-  lcd.print(latitude);
-  lcd.setCursor(0, 1);
-  lcd.print("Lng:");
-  lcd.setCursor(5, 1);
-  lcd.print(longitude);
+  // lcd.clear();
+  // lcd.setCursor(0, 0);
+  // lcd.print("Lat: ");
+  // lcd.setCursor(5, 0);
+  // lcd.print(latitude);
+  // lcd.setCursor(0, 1);
+  // lcd.print("Lng:");
+  // lcd.setCursor(5, 1);
+  // lcd.print(longitude);
 
   delay(1000);
 
