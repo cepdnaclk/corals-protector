@@ -379,44 +379,47 @@ void loop()
   {
     while (true)
     {
-      // Serial.println("waiting");
+      Serial.println("waiting");
 
-      // buttonStateForUpload = digitalRead(buttonPinForUpload);
-      // if (buttonStateForUpload != lastButtonStateForUpload)
-      // {
-      //     if (buttonStateForUpload == LOW)
-      //     {
-      //         delay(5000); // add debounce delay
-      //         Serial.println("meassage inside............................................");
-      // publishMessage();
-
-      //         Serial.println("meassage outside.................................................");
-      //     }
-      //     lastButtonStateForUpload = buttonStateForUpload;
-      // }
-      // client.loop();
-
-      connectAWS();
-
-      publishMessage();
-      client.loop();
-
-      Serial.println("Sucessfully Uploaded");
-      lcd.clear();
-      lcd.setCursor(2, 0);
-      lcd.print("Sucessfully");
-      lcd.setCursor(4, 1);
-      lcd.print("Uploaded");
-
-      delay(5000);
-
-      lcd.clear();
-      lcd.setCursor(4, 0);
-      lcd.print("FINISHED");
-
-      while (true)
+      buttonStateForUpload = digitalRead(buttonPinForUpload);
+      if (buttonStateForUpload != lastButtonStateForUpload)
       {
+        if (buttonStateForUpload == LOW)
+        {
+          delay(5000); // add debounce delay
+
+          connectAWS();
+          delay(3000);
+
+          Serial.println("meassage inside............................................");
+          publishMessage();
+          Serial.println("meassage outside.................................................");
+        }
+        lastButtonStateForUpload = buttonStateForUpload;
       }
+      client.loop();
+    }
+
+    // connectAWS();
+
+    // publishMessage();
+    // client.loop();
+
+    Serial.println("Sucessfully Uploaded");
+    lcd.clear();
+    lcd.setCursor(2, 0);
+    lcd.print("Sucessfully");
+    lcd.setCursor(4, 1);
+    lcd.print("Uploaded");
+
+    delay(5000);
+
+    lcd.clear();
+    lcd.setCursor(4, 0);
+    lcd.print("FINISHED");
+
+    while (true)
+    {
     }
   }
 }
