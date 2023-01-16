@@ -62,6 +62,7 @@ void connectAWS()
   lcd.print("Connecting to");
   lcd.setCursor(3, 1);
   lcd.print("Wi-Fi ...");
+  delay(1000);
 
   while (WiFi.status() != WL_CONNECTED)
   {
@@ -380,6 +381,11 @@ void loop()
     while (true)
     {
       Serial.println("waiting for uplaod");
+      lcd.clear();
+      lcd.setCursor(2, 0);
+      lcd.print("Waiting for");
+      lcd.setCursor(5, 1);
+      lcd.print("UPLOAD");
 
       buttonStateForUpload = digitalRead(buttonPinForUpload);
       if (buttonStateForUpload != lastButtonStateForUpload)
@@ -417,6 +423,8 @@ void loop()
     lcd.clear();
     lcd.setCursor(4, 0);
     lcd.print("FINISHED");
+    lcd.setCursor(0, 1);
+    lcd.print("You can turn off");
 
     while (true)
     {
