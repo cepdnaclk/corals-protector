@@ -218,11 +218,6 @@ bool getGps()
   {
     if (gps.encode(Serial2.read()))
     {
-      Serial.print(F("Location: "));
-      lcd.clear();
-      lcd.setCursor(3, 0);
-      lcd.print("Location: ");
-
       if (gps.location.isValid())
       {
         latitude = (gps.location.lat());
@@ -235,6 +230,7 @@ bool getGps()
 
         return false; // for break gps find function
       }
+
       else
       {
         Serial.println(F("Location: INVALID"));
@@ -246,6 +242,7 @@ bool getGps()
       }
     }
   }
+  // return false;
 }
 
 void setup()
@@ -277,60 +274,64 @@ void setup()
     if (millis() > 5000 && gps.charsProcessed() < 10)
     {
       Serial.println(F("No GPS detected: check wiring."));
+
       lcd.clear();
       lcd.setCursor(0, 0);
       lcd.print("No GPS detected:");
       lcd.setCursor(2, 1);
       lcd.print("checking ...");
 
-      buttonStateForGps = digitalRead(buttonPinForGps);
-      if (buttonStateForGps != lastButtonStateForGps)
-      {
-        if (buttonStateForGps == LOW)
-        {
-          delay(5000); // add debounce delay
-          Serial.println("meassage before gps skip button pressed................................................");
-          gps_bool_val = false;
-          Serial.println("meassage after gps skip button pressed.................................................");
-        }
-        lastButtonStateForGps = buttonStateForGps;
-      }
-      gps_bool_val = getGps();
+      delay(1000);
     }
-    Serial.println(F("GPS calculated"));
-    lcd.clear();
-    lcd.setCursor(5, 0);
-    lcd.print("*GPS*");
-    lcd.setCursor(3, 1);
-    lcd.print("calculated");
 
-    // // for printing Location below 2 line in same location
-    char Location[50] = "";
-    snprintf(Location, 50, "Lat: %lf; Lng: %lf", latitude, longitude);
-    Serial.print("Location : ");
-    Serial.print(Location);
-    Serial.println("");
+    gps_bool_val = getGps();
 
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("Lat: ");
-    lcd.setCursor(5, 0);
-    lcd.print(latitude);
-    lcd.setCursor(0, 1);
-    lcd.print("Lng:");
-    lcd.setCursor(5, 1);
-    lcd.print(longitude);
-
-    delay(500);
-
-    Serial.println("Started Measuring");
-    delay(3000);
-    lcd.clear();
-    lcd.setCursor(4, 0);
-    lcd.print("Started");
-    lcd.setCursor(3, 1);
-    lcd.print("Measuring");
+    buttonStateForGps = digitalRead(buttonPinForGps);
+    if (buttonStateForGps != lastButtonStateForGps)
+    {
+      if (buttonStateForGps == LOW)
+      {
+        delay(5000); // add debounce delay
+        Serial.println("meassage before gps skip button pressed................................................");
+        Serial.println("meassage after gps skip button pressed.................................................");
+        break;
+      }
+      lastButtonStateForGps = buttonStateForGps;
+    }
   }
+
+  Serial.println(F("GPS calculated"));
+  lcd.clear();
+  lcd.setCursor(5, 0);
+  lcd.print("*GPS*");
+  lcd.setCursor(3, 1);
+  lcd.print("calculated");
+
+  // // for printing Location below 2 line in same location
+  char Location[50] = "";
+  snprintf(Location, 50, "Lat: %lf; Lng: %lf", latitude, longitude);
+  Serial.print("Location : ");
+  Serial.print(Location);
+
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Lat: ");
+  lcd.setCursor(5, 0);
+  lcd.print(latitude);
+  lcd.setCursor(0, 1);
+  lcd.print("Lng:");
+  lcd.setCursor(5, 1);
+  lcd.print(longitude);
+
+  delay(1000);
+
+  Serial.println("Started Measuring");
+  delay(3000);
+  lcd.clear();
+  lcd.setCursor(4, 0);
+  lcd.print("Started");
+  lcd.setCursor(3, 1);
+  lcd.print("Measuring");
 }
 
 void loop()
@@ -344,7 +345,7 @@ void loop()
   // wait 1 hour for get first reading
   // delay(3600000);
   lcd.setCursor(10, 1);
-  lcd.print(count);
+  lcd.print(count + 1);
 
   Serial.print(count);
   Serial.print(" | ");
@@ -371,7 +372,6 @@ void loop()
   Serial.print(" | ");
 
   Serial.println("");
-
   delay(500);
   count++;
 
@@ -379,7 +379,7 @@ void loop()
   {
     while (true)
     {
-      Serial.println("waiting");
+      Serial.println("waiting for uplaod");
 
       buttonStateForUpload = digitalRead(buttonPinForUpload);
       if (buttonStateForUpload != lastButtonStateForUpload)
@@ -389,11 +389,11 @@ void loop()
           delay(5000); // add debounce delay
 
           connectAWS();
-          delay(3000);
 
           Serial.println("meassage inside............................................");
           publishMessage();
           Serial.println("meassage outside.................................................");
+          break;
         }
         lastButtonStateForUpload = buttonStateForUpload;
       }
