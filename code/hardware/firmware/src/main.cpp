@@ -7,6 +7,12 @@
 #include <DallasTemperature.h>
 #include <TinyGPSPlus.h>
 #include <LiquidCrystal_I2C.h>
+#include <WiFi.h>
+#include <AsyncTCP.h>
+#include <ESPAsyncWebServer.h>
+#include <AsyncElegantOTA.h>
+
+AsyncWebServer server(80);
 
 // Create the lcd object address 0x3F and 16 columns x 2 rows
 LiquidCrystal_I2C lcd(0x27, 16, 2); //
@@ -78,6 +84,17 @@ void connectAWS()
       dot_count = 6;
     }
   }
+
+  Serial.println("");
+  Serial.print("Connected to ");
+  Serial.println(ssid);
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+            { request->send(200, "text/plain", "Hi! I am ESP32."); });
+  AsyncElegantOTA.begin(&server); // Start ElegantOTA
+  server.begin();
+  Serial.println("HTTP server started");
 
   // Configure WiFiClientSecure to use the AWS IoT device credentials
   net.setCACert(AWS_CERT_CA);
@@ -383,6 +400,8 @@ void setup()
 
 void loop()
 {
+  AsyncElegantOTA.loop();
+
   lcd.clear();
   lcd.setCursor(2, 0);
   lcd.print("*Measuring*");
