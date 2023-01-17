@@ -101,13 +101,14 @@ void connectAWS()
   delay(1000);
 
   dot_count = 0;
+  lcd.clear();
   while (!client.connect(THINGNAME))
   {
     delay(5000);
     Serial.print(".");
 
-    lcd.clear();
-    lcd.setCursor(0, 0);
+    lcd.setCursor(2, 0);
+    lcd.print("Turn on Data");
     lcd.setCursor(dot_count, 1);
     lcd.print(".");
     dot_count++;
@@ -424,15 +425,16 @@ void loop()
 
   if (count == ARRAY_SIZE)
   {
+    Serial.println("waiting for uplaod");
+
+    lcd.clear();
+    lcd.setCursor(2, 0);
+    lcd.print("Waiting for");
+    lcd.setCursor(5, 1);
+    lcd.print("UPLOAD");
+
     while (true)
     {
-      Serial.println("waiting for uplaod");
-      lcd.clear();
-      lcd.setCursor(2, 0);
-      lcd.print("Waiting for");
-      lcd.setCursor(5, 1);
-      lcd.print("UPLOAD");
-
       buttonStateForUpload = digitalRead(buttonPinForUpload);
       if (buttonStateForUpload != lastButtonStateForUpload)
       {
