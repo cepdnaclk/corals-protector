@@ -56,18 +56,27 @@ void connectAWS()
   WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
-  Serial.println("Connecting to Wi-Fi");
+  Serial.println("Waiting for Wi-Fi");
   lcd.clear();
-  lcd.setCursor(1, 0);
-  lcd.print("Connecting to");
-  lcd.setCursor(3, 1);
-  lcd.print("Wi-Fi ...");
+  lcd.setCursor(2, 0);
+  lcd.print("Waiting for");
+  lcd.setCursor(0, 1);
+  lcd.print("Wi-Fi ");
   delay(1000);
 
+  int dot_count = 6;
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
     Serial.print(".");
+
+    lcd.setCursor(dot_count, 1);
+    lcd.print(".");
+    dot_count++;
+    if (dot_count == 15)
+    {
+      dot_count = 0;
+    }
   }
 
   // Configure WiFiClientSecure to use the AWS IoT device credentials
@@ -83,16 +92,29 @@ void connectAWS()
 
   Serial.println();
   Serial.println("Connecting to AWS IOT");
-  lcd.clear();
-  lcd.setCursor(1, 0);
-  lcd.print("Connecting to");
-  lcd.setCursor(2, 1);
-  lcd.print("AWS IOT ...");
 
+  lcd.clear();
+  lcd.setCursor(2, 0);
+  lcd.print("Connected to");
+  lcd.setCursor(0, 1);
+  lcd.print("... Network ...");
+  delay(1000);
+
+  dot_count = 0;
   while (!client.connect(THINGNAME))
   {
-    Serial.print(".");
     delay(5000);
+    Serial.print(".");
+
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.setCursor(dot_count, 1);
+    lcd.print(".");
+    dot_count++;
+    if (dot_count == 15)
+    {
+      dot_count = 0;
+    }
   }
 
   if (!client.connected())
@@ -100,7 +122,7 @@ void connectAWS()
     Serial.println("AWS IoT Timeout!");
     lcd.clear();
     lcd.setCursor(4, 0);
-    lcd.print("AWS IoT");
+    lcd.print("NETWORK");
     lcd.setCursor(4, 1);
     lcd.print("Timeout!");
     return;
@@ -110,9 +132,10 @@ void connectAWS()
   client.subscribe(AWS_IOT_SUBSCRIBE_TOPIC);
 
   Serial.println("AWS IoT Connected!");
+
   lcd.clear();
   lcd.setCursor(4, 0);
-  lcd.print("AWS IoT");
+  lcd.print("DATABASE");
   lcd.setCursor(3, 1);
   lcd.print("Connected!");
 }
@@ -185,17 +208,12 @@ void publishMessage()
     array_for_temperature.add(temperatureC[i]);
   }
 
-  //    doc["ph"] = LDR;
-  //    doc["temp"] = temp;
   ////////////////////////////////////////////////////
   size_t jsonSize = measureJson(doc);
+  // Serial.println("............................................................................");
+  // Serial.println(jsonSize);
+  // Serial.println("............................................................................");
   char jsonBuffer[2048];
-
-  Serial.println("............................................................................");
-  Serial.println(jsonSize);
-  Serial.println("............................................................................");
-
-  // char jsonBuffer[2048];
   serializeJson(doc, jsonBuffer); // print to client
 
   client.publish(AWS_IOT_PUBLISH_TOPIC, jsonBuffer);
@@ -253,11 +271,10 @@ void setup()
   lcd.backlight(); // Turn on the backlight on LCD.
   // Here cursor is placed on first position (col: 3) of the second line (row: 0)
   lcd.clear();
-  lcd.setCursor(3, 0);
-  lcd.print("WELCOME");
+  lcd.setCursor(0, 0);
+  lcd.print("*** WELCOME ***");
 
   Serial.begin(115200);
-  // connectAWS();
 
   // for Gps
   Serial2.begin(9600);
@@ -315,8 +332,9 @@ void setup()
       if (buttonStateForGps == LOW)
       {
         delay(5000); // add debounce delay
-        Serial.println("meassage before gps skip button pressed................................................");
-        Serial.println("meassage after gps skip button pressed.................................................");
+
+        // Serial.println("gps skip button pressed ................................................");
+
         break;
       }
       lastButtonStateForGps = buttonStateForGps;
@@ -324,6 +342,7 @@ void setup()
   }
 
   Serial.println(F("GPS calculated"));
+
   lcd.clear();
   lcd.setCursor(5, 0);
   lcd.print("*GPS*");
@@ -349,7 +368,9 @@ void setup()
   delay(1000);
 
   Serial.println("Started Measuring");
+
   delay(3000);
+
   lcd.clear();
   lcd.setCursor(4, 0);
   lcd.print("Started");
@@ -367,6 +388,7 @@ void loop()
 
   // wait 1 hour for get first reading
   // delay(3600000);
+
   lcd.setCursor(10, 1);
   lcd.print(count + 1);
 
@@ -415,25 +437,26 @@ void loop()
         if (buttonStateForUpload == LOW)
         {
           delay(5000); // add debounce delay
+          Serial.println("upload button pressed............................................");
 
           connectAWS();
-
-          Serial.println("meassage inside............................................");
           publishMessage();
-          Serial.println("meassage outside.................................................");
+          delay(1000);
+
           break;
         }
         lastButtonStateForUpload = buttonStateForUpload;
       }
+
       client.loop();
     }
 
     // connectAWS();
-
     // publishMessage();
     // client.loop();
 
-    Serial.println("Sucessfully Uploaded");
+    Serial.println("Data Sucessfully Uploaded");
+
     lcd.clear();
     lcd.setCursor(2, 0);
     lcd.print("Sucessfully");
