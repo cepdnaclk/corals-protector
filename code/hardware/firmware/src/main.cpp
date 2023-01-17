@@ -91,7 +91,7 @@ void connectAWS()
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-            { request->send(200, "text/plain", "Hi! I am ESP32."); });
+            { request->send(200, "text/plain", "Hi! I am corals protector device-1."); });
   AsyncElegantOTA.begin(&server); // Start ElegantOTA
   server.begin();
   Serial.println("HTTP server started");
