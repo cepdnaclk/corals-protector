@@ -75,7 +75,7 @@ void connectAWS()
     dot_count++;
     if (dot_count == 15)
     {
-      dot_count = 0;
+      dot_count = 6;
     }
   }
 
@@ -138,6 +138,7 @@ void connectAWS()
   lcd.print("DATABASE");
   lcd.setCursor(3, 1);
   lcd.print("Connected!");
+  delay(500);
 }
 
 void publishMessage()
@@ -273,6 +274,7 @@ void setup()
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("*** WELCOME ***");
+  delay(3000);
 
   Serial.begin(115200);
 
@@ -331,7 +333,7 @@ void setup()
     {
       if (buttonStateForGps == LOW)
       {
-        delay(5000); // add debounce delay
+        delay(3000); // add debounce delay
 
         // Serial.println("gps skip button pressed ................................................");
 
@@ -365,7 +367,7 @@ void setup()
   // lcd.setCursor(5, 1);
   // lcd.print(longitude);
 
-  delay(1000);
+  delay(500);
 
   Serial.println("Started Measuring");
 
@@ -417,7 +419,7 @@ void loop()
   Serial.print(" | ");
 
   Serial.println("");
-  delay(500);
+  delay(1000);
   count++;
 
   if (count == ARRAY_SIZE)
@@ -436,7 +438,7 @@ void loop()
       {
         if (buttonStateForUpload == LOW)
         {
-          delay(5000); // add debounce delay
+          delay(3000); // add debounce delay
           Serial.println("upload button pressed............................................");
 
           connectAWS();
