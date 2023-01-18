@@ -450,11 +450,11 @@ void loop()
 
   if (count == ARRAY_SIZE)
   {
-    Serial.println("waiting for uplaod");
+    Serial.println("Ready for uplaod");
 
     lcd.clear();
     lcd.setCursor(2, 0);
-    lcd.print("Waiting for");
+    lcd.print("Ready for");
     lcd.setCursor(5, 1);
     lcd.print("UPLOAD");
 
@@ -495,13 +495,36 @@ void loop()
     delay(5000);
 
     lcd.clear();
-    lcd.setCursor(4, 0);
-    lcd.print("FINISHED");
-    lcd.setCursor(0, 1);
-    lcd.print("You can turn off");
+    lcd.setCursor(3, 0);
+    lcd.print("Ready For");
+    lcd.setCursor(5, 1);
+    lcd.print("Reset");
 
     while (true)
     {
+      buttonStateForGps = digitalRead(buttonPinForGps);
+      if (buttonStateForGps != lastButtonStateForGps)
+      {
+        if (buttonStateForGps == LOW)
+        {
+          delay(3000); // add debounce delay
+
+          lcd.clear();
+          lcd.setCursor(4, 0);
+          lcd.print("FINISHED");
+          lcd.setCursor(0, 1);
+          lcd.print("You can turn off");
+          // Serial.println("meassage before gps  button pressed................................................");
+          // Serial.println("meassage after gps  button pressed.................................................");
+          break;
+        }
+        lastButtonStateForGps = buttonStateForGps;
+      }
+    }
+
+    while (true)
+    {
+      /* code */
     }
   }
 }
