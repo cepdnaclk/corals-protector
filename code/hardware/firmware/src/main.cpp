@@ -18,7 +18,7 @@ AsyncWebServer server(80);
 LiquidCrystal_I2C lcd(0x27, 16, 2); //
 
 // The TinyGPSPlus object
-TinyGPSPlus gps;
+// TinyGPSPlus gps;
 
 // Temperature sensor
 const int Temperature_sensor_pin = 4;           // GPIO where the DS18B20 is connected to
@@ -254,38 +254,38 @@ void messageHandler(char *topic, byte *payload, unsigned int length)
   //    Serial.println(message);
 }
 
-bool getGps()
-{
-  while (Serial2.available() > 0)
-  {
-    if (gps.encode(Serial2.read()))
-    {
-      if (gps.location.isValid())
-      {
-        latitude = (gps.location.lat());
-        longitude = (gps.location.lng());
+// bool getGps()
+// {
+//   while (Serial2.available() > 0)
+//   {
+//     if (gps.encode(Serial2.read()))
+//     {
+//       if (gps.location.isValid())
+//       {
+//         latitude = (gps.location.lat());
+//         longitude = (gps.location.lng());
 
-        if ((int)latitude == 0 || (int)longitude == 0)
-        {
-          continue;
-        }
+//         if ((int)latitude == 0 || (int)longitude == 0)
+//         {
+//           continue;
+//         }
 
-        return false; // for break gps find function
-      }
+//         return false; // for break gps find function
+//       }
 
-      else
-      {
-        Serial.println(F("Location: INVALID"));
-        lcd.clear();
-        lcd.setCursor(3, 0);
-        lcd.print("Location: ");
-        lcd.setCursor(4, 1);
-        lcd.print("INVALID");
-      }
-    }
-  }
-  // return false;
-}
+//       else
+//       {
+//         Serial.println(F("Location: INVALID"));
+//         lcd.clear();
+//         lcd.setCursor(3, 0);
+//         lcd.print("Location: ");
+//         lcd.setCursor(4, 1);
+//         lcd.print("INVALID");
+//       }
+//     }
+//   }
+//   // return false;
+// }
 
 void setup()
 {
@@ -348,22 +348,24 @@ void setup()
   lcd.setCursor(2, 1);
   lcd.print("checking ...");
 
-  while (true)
-  {
-    buttonStateForGps = digitalRead(buttonPinForGps);
-    if (buttonStateForGps != lastButtonStateForGps)
-    {
-      if (buttonStateForGps == LOW)
-      {
-        delay(3000); // add debounce delay
+  // while (true)
+  // {
+  //   buttonStateForGps = digitalRead(buttonPinForGps);
+  //   if (buttonStateForGps != lastButtonStateForGps)
+  //   {
+  //     if (buttonStateForGps == LOW)
+  //     {
+  //       delay(3000); // add debounce delay
 
-        // Serial.println("gps skip button pressed ................................................");
+  //       // Serial.println("gps skip button pressed ................................................");
 
-        break;
-      }
-      lastButtonStateForGps = buttonStateForGps;
-    }
-  }
+  //       break;
+  //     }
+  //     lastButtonStateForGps = buttonStateForGps;
+  //   }
+  // }
+
+  delay(10000);
 
   Serial.println(F("GPS calculated"));
 
