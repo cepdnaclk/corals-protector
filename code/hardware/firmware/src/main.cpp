@@ -62,40 +62,43 @@ void connectAWS()
   WiFi.mode(WIFI_STA);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
-  Serial.println("Waiting for Wi-Fi");
-  lcd.clear();
-  lcd.setCursor(2, 0);
-  lcd.print("Waiting for");
-  lcd.setCursor(0, 1);
-  lcd.print("Wi-Fi ");
-  delay(1000);
-
-  int dot_count = 6;
+  // Wait for connection
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
     Serial.print(".");
-
-    lcd.setCursor(dot_count, 1);
-    lcd.print(".");
-    dot_count++;
-    if (dot_count == 15)
-    {
-      dot_count = 6;
-    }
   }
-
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
 
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
             { request->send(200, "text/plain", "Hi! I am corals protector device-1."); });
+
   AsyncElegantOTA.begin(&server); // Start ElegantOTA
   server.begin();
-  Serial.println("HTTP server started");
+  // WiFi.mode(WIFI_STA);
+  // WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
+
+  // Serial.println("Waiting for Wi-Fi");
+  // lcd.clear();
+  // lcd.setCursor(2, 0);
+  // lcd.print("Waiting for");
+  // lcd.setCursor(0, 1);
+  // lcd.print("Wi-Fi ");
+  // delay(1000);
+
+  // int dot_count = 6;
+  // while (WiFi.status() != WL_CONNECTED)
+  // {
+  //   delay(500);
+  //   Serial.print(".");
+
+  //   lcd.setCursor(dot_count, 1);
+  //   lcd.print(".");
+  //   dot_count++;
+  //   if (dot_count == 15)
+  //   {
+  //     dot_count = 6;
+  //   }
+  // }
 
   // Configure WiFiClientSecure to use the AWS IoT device credentials
   net.setCACert(AWS_CERT_CA);
@@ -118,7 +121,7 @@ void connectAWS()
   lcd.print("... Network ...");
   delay(1000);
 
-  dot_count = 0;
+  int dot_count = 0;
   lcd.clear();
   while (!client.connect(THINGNAME))
   {
@@ -445,11 +448,11 @@ void loop()
 
   if (count == ARRAY_SIZE)
   {
-    Serial.println("Ready for uplaod");
+    Serial.println("waiting for uplaod");
 
     lcd.clear();
     lcd.setCursor(2, 0);
-    lcd.print("Ready for");
+    lcd.print("Waiting for");
     lcd.setCursor(5, 1);
     lcd.print("UPLOAD");
 
