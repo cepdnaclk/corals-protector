@@ -40,8 +40,8 @@ float pH[ARRAY_SIZE];
 int LDR_val[ARRAY_SIZE];
 float temperatureC[ARRAY_SIZE];
 
-double latitude;
-double longitude;
+double latitude = 0.000000;
+double longitude = 0.000000;
 
 const int buttonPinForUpload = 26;
 int buttonStateForUpload = 0;
@@ -211,7 +211,7 @@ void publishMessage()
   DynamicJsonDocument doc(4096);
 
   doc["deviceCode"] = "device1";
-  doc["location"] = Location;
+  doc["locations"] = Location;
 
   JsonArray array_for_ldr = doc.createNestedArray("LDR");
   for (int i = 0; i < 6; i++)
@@ -445,7 +445,7 @@ void loop()
   Serial.print(" | ");
 
   Serial.println("");
-  delay(1000);
+  delay(2000);
   count++;
 
   if (count == ARRAY_SIZE)
