@@ -1,92 +1,34 @@
 #include <pgmspace.h>
- 
+
 #define SECRET
-#define THINGNAME "test_abi"                         //change this
- 
-const char WIFI_SSID[] = "Galaxy A51 53CE";               //change this
-const char WIFI_PASSWORD[] = "00000000";           //change this
-const char AWS_IOT_ENDPOINT[] = "a1sebe49a1oqq2-ats.iot.ap-northeast-1.amazonaws.com";       //change this
- 
+#define THINGNAME "test_abi" // change this
+
+const char WIFI_SSID[] = "Galaxy A51 53CE";                                            // change this
+const char WIFI_PASSWORD[] = "00000000";                                               // change this
+const char AWS_IOT_ENDPOINT[] = "a1sebe49a1oqq2-ats.iot.ap-northeast-1.amazonaws.com"; // change this
+
 // Amazon Root CA 1
 static const char AWS_CERT_CA[] PROGMEM = R"EOF(
 -----BEGIN CERTIFICATE-----
-MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF
-ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6
-b24gUm9vdCBDQSAxMB4XDTE1MDUyNjAwMDAwMFoXDTM4MDExNzAwMDAwMFowOTEL
-MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv
-b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj
-ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM
-9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw
-IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6
-VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L
-93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm
-jgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC
-AYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUA
-A4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDI
-U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs
-N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv
-o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
-5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
-rqXRfboQnoZsG4q5WTP468SQvvG5
+
 -----END CERTIFICATE-----
 )EOF";
- 
+
 // Device Certificate                                               //change this
 static const char AWS_CERT_CRT[] PROGMEM = R"KEY(
 -----BEGIN CERTIFICATE-----
-MIIDWjCCAkKgAwIBAgIVAKnt5bNPhCtJbVfxGnSD/6LCweatMA0GCSqGSIb3DQEB
-CwUAME0xSzBJBgNVBAsMQkFtYXpvbiBXZWIgU2VydmljZXMgTz1BbWF6b24uY29t
-IEluYy4gTD1TZWF0dGxlIFNUPVdhc2hpbmd0b24gQz1VUzAeFw0yMzAxMTAxNTQw
-NDZaFw00OTEyMzEyMzU5NTlaMB4xHDAaBgNVBAMME0FXUyBJb1QgQ2VydGlmaWNh
-dGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCvnPgbbc/FikaEpK8G
-h0/AEHSMkYSHjbhBRTaSTm8UHD0uiPoiBKns9TZHI9I+wKEJBUeK1+s4Tk0TZtAk
-SeV9MQInAjz1b6vZjJFkPgppMuqFj66kZ9+rY6d8MfOjlv1YSW42TmwSLZmK/C9k
-FpZa0aXdfzMAdjQEuroXvyWqeB6zZWtZIgm80WJmq7bBU+ntTPveeKzrv6b2ZQH0
-Ko/G2xRj6SVVRNubKLEm2fn7dx0e1M1aZyBlS3O/zhyDQ3MgqFxdYcphVC51tq/m
-GGAxoPhrIAz+orez2M8Cymxq9ganeYb2CWh3Y5lht4rDuo5S9hPdfKlOdsqvmRFx
-BQlBAgMBAAGjYDBeMB8GA1UdIwQYMBaAFFRhYFaIcklAyhI06mz1x/qzVvDaMB0G
-A1UdDgQWBBS6MvDkxEvxqf2LAY9+gHVs29MntDAMBgNVHRMBAf8EAjAAMA4GA1Ud
-DwEB/wQEAwIHgDANBgkqhkiG9w0BAQsFAAOCAQEAXBwSDPUl4DPTxAjLDrVh5fgy
-k4SuNDsvzsl8udugFVtK8wlFO1NArrX91Y80JKmbrrli0apm/SGojoSyfI7Q48BC
-mdsdsD8y7IT4tf9HDYXdxcPSFghi0qJOAiqOrgMBJBJTyzObQNumXLB+oxd62d+7
-KXtR3Kplqzk7hvgksRPfH8WHJRVJYg1WWv/De1F4Uj2GEhwi3UheFPfHJcFzah0D
-CP6VvKMOVIO+N1PFb5Eq75UMr/nApEBcACTA+dM0wJ6u7l80s3rWQQmwi00natKx
-t0/9XbZ8961wWi1fFZXPJbkd/5RfEgL6wP5anEjjiMqsu5IWl+n0CAmNTMV16Q==
+
 -----END CERTIFICATE-----
 
 
  
  
 )KEY";
- 
+
 // Device Private Key                                               //change this
 static const char AWS_CERT_PRIVATE[] PROGMEM = R"KEY(
 -----BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEAr5z4G23PxYpGhKSvBodPwBB0jJGEh424QUU2kk5vFBw9Loj6
-IgSp7PU2RyPSPsChCQVHitfrOE5NE2bQJEnlfTECJwI89W+r2YyRZD4KaTLqhY+u
-pGffq2OnfDHzo5b9WEluNk5sEi2ZivwvZBaWWtGl3X8zAHY0BLq6F78lqnges2Vr
-WSIJvNFiZqu2wVPp7Uz73nis67+m9mUB9CqPxtsUY+klVUTbmyixJtn5+3cdHtTN
-WmcgZUtzv84cg0NzIKhcXWHKYVQudbav5hhgMaD4ayAM/qK3s9jPAspsavYGp3mG
-9glod2OZYbeKw7qOUvYT3XypTnbKr5kRcQUJQQIDAQABAoIBAAbRIRBvgtE4POSJ
-QAIQ3pemC+ApBev9JFnkReoIAWfWcMmNp6gKZk48do7sZQzqjVW8TrqlBwx4faVz
-KEFAXRgu/tZkz9j3LMSVIE+z2NOcll345d6b6aLNi4LWrY58Hfl/YDfbc3aBLqSm
-hXBtMAj2emnOtjweWoaUeQTS9rNXReBFPvaZlc00nugI4Vu8x9wo4B+4zR9k3i71
-BBJ+wu5sEaAsse/1L0GY5Xp/weQO1D2yL5S4BCrk2wyiJBMpUMkDJjP7K2Bf6Ltx
-y6XYIWcEZU+OkZrjYuBpNn8Oe9FvZMG5K0eBLndNoxu05oap70H420nivTCP18Zf
-keHNgsECgYEA3MT522TyRQua7GPhu1t3kx34oR0/Ftg/qBjoInbp5yp9TidlSupc
-YtRytuR+Ei+6QxypBTROMQUWxTIOIcKWEPZiB1OptjBBDjJtPCuRSaaVxEsq2x9E
-NXCeJf0ntcYgv3PLwx9cWmKPpvcIir5xYboNUa22eTQisuFHjHydfjMCgYEAy6M8
-8pXxVoZNZKMC/8NufilrRPV1eeFjQhpZJZOCIAnzgWG3KaXDhPlpl7Qlhs7iqHI6
-i+G107Y9voEm88dhUDhej+SMq/xqw1jEtpUdtGpCULVNoaATD5Dn2hoQtqbszlWy
-5ZUFAfUEz6pHuzv7S5mz5vEuIUe1d8i/yHBwvrsCgYANhK48BfFj0vMYmIEhBNfM
-lWA9FVpgnrs/Is9MFPX7prlniLgGH1Wq45Fmq5UgrfV82Its+yfyjno3dvowjQa9
-YSjdg/z3X/sL0ICp140c8mtnSqcEJeT6VLwKXXcKBWjJ8GBAwXHZQwHC2ouWW1T8
-A/V+0+FBiLS7OVo1Owg1ywKBgG5rBRFE3KfeCvkWqvmkLrWaH+A0eI6t9/RP9Sa6
-5UQaIT92jKq4h1wDIY5w0ChY5e4Qgk53BPDXUIOL5GMrKUkmR6AefWiEZh+mcoPO
-N10sgOjiZkXNVoiKOi25FHb17FG1hluWgjCdew5fdqW/0HMd1L7U5/6Ds5JP+C3n
-SjshAoGAMfklsLO7upn46la7HKKNP9HGQ+A4soLOx790q5QV2Cb9Z8HwZRAbzPSn
-Uaypp23J0yMRj/ezMJBhDUIKUcpFwoDSEN17X7KXEY/CoYIX5uaTq1OgXJPhpedd
-a8CBCLyN+49fId4CXvFX/V/PJfoeBpgq8PrtVmI1hrzvl4GjsQs=
+
 -----END RSA PRIVATE KEY-----
 
  
