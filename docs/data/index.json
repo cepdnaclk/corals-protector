@@ -1,0 +1,47 @@
+{
+    "team": [
+        {
+            "name": "Abilash R",
+            "email": "e180130@eng.pdn.ac.lk",
+            "eNumber": "E/18/013",
+            "github_profile":"https://github.com/RavindranAbilash",
+            "linkedin_profile":"https://www.linkedin.com/in/ravindran-abilash/",
+            "website": "#"
+            
+        },
+        {
+            "name": "Gowsigan A",
+            "email": "e18115@eng.pdn.ac.lk",
+            "eNumber": "E/18/115",
+            "github_profile":"https://github.com/AnnalingamGowsigan",
+            "linkedin_profile":"https://www.linkedin.com/in/annalingam-gowsigan-87a3991b4/",
+            "website": "#"
+        },
+        {
+            "name": "Thulasiyan Y",
+            "email": "e18366@eng.pdn.ac.lk",
+            "eNumber": "E/18/366",
+            "github_profile":"https://github.com/SyThulasi",
+            "linkedin_profile":"https://www.linkedin.com/in/thulasiyan-yogeswaran-5ba1221a4/",
+            "website": "#"
+        }
+    ],
+    "supervisors": [
+        {
+            "name": "Dr. Isuru Nawinne ",
+            "email": "isurunawinne@eng.pdn.ac.lk",
+            "linkedin_profile":"https://www.linkedin.com/in/isuru-nawinne-73302833/",
+            "website": "https://www.researchgate.net/profile/Isuru-Nawinne",
+            "researchgate_profile":"#"
+        },
+        {
+            "name": "Dr. Mahanama Wickramasinghe",
+            "email": "mahanamaw@eng.pdn.ac.lk",
+            "linkedin_profile":"https://www.linkedin.com/in/mahanama/",
+            "website": "#",
+            "researchgate_profile":"#"
+        }
+
+    ],
+    "tags": ["Web", "Embedded Systems"]
+}
