@@ -2,3 +2,5 @@
 code/backend/.env
 *.iml
 *.xml
+*.pem
+*.pem

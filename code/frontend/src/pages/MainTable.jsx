@@ -1,23 +1,36 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject ,Search,Toolbar} from '@syncfusion/ej2-react-grids';
 
 import { ordersData, contextMenuItems, ordersGrid , readingsData ,readingsGrid } from '../data/dummy';
 import { Header } from '../components';
+import axios from "axios";
+import {AuthContext} from "../contexts/AuthContext";
+
+
+
 
 const MainTable = () => {
-    const editing = { allowDeleting: true, allowEditing: true };
+    const [readings, setReadings] = useState([]);
+    const {user} = useContext(AuthContext)
+
+    useEffect(() => {
+        const fetchDevices = async () => {
+            const res = await axios.get("/reading/allreadings/"+user._id)
+            setReadings(res.data);
+        };
+        fetchDevices();
+    }, []);
     return (
         <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <Header category="Page" title="Main Table" />
+            <Header category="" title="Main Table" />
             <GridComponent
                 id="gridcomp"
-                dataSource={readingsData}
+                dataSource={readings}
                 allowPaging
                 allowSorting
                 allowExcelExport
                 allowPdfExport
                 contextMenuItems={contextMenuItems}
-                editSettings={editing}
                 toolbar = {['Search']}
                 width = 'auto'
             >

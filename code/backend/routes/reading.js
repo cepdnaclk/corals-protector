@@ -2,6 +2,7 @@ const router = require("express").Router();
 const SensorReading = require("../models/Reading");
 const bcrypt = require("bcrypt");
 const Device = require("../models/Device");
+const moment = require('moment');
 
 
 //Save the reading
@@ -38,9 +39,13 @@ router.get("/all", function (req, res) {
 });
 
 router.get("/allreadings/:username", async (req, res) => {
+  let newArr = [];
   try {
     const readings = await SensorReading.find({ userID: req.params.username });
-    res.status(200).json(readings);
+    readings.map((p) => {
+          newArr.push({ Date: moment(p.createdAt).format('DD/MM/YYYY'),Device:p.deviceCode, Location:p.locations ,Ph:Math.max(...p.pH),Sunlight:Math.max(...p.lightIntensity),Temperature:Math.max(...p.temperature)})
+    })
+    res.status(200).json(newArr);
   } catch (err) {
     res.status(500).json(err);
   }

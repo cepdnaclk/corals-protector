@@ -22,7 +22,7 @@ router.put("/:id", async (req, res) => {
       return res.status(500).json(err);
     }
   } else {
-    return res.status(403).json("You can update only your account!");
+    return res.status(500).json("You can update only your account!");
   }
 });
 
@@ -36,7 +36,7 @@ router.delete("/:id", async (req, res) => {
       return res.status(500).json(err);
     }
   } else {
-    return res.status(403).json("You can delete only your account!");
+    return res.status(500).json("You can delete only your account!");
   }
 });
 
@@ -59,25 +59,25 @@ router.put("/:id/addDevice", async (req, res) => {
       const currentUser = await User.findById(req.params.id);
 
       const device = await User.findOne({ deviceCode: req.body.deviceCode });
-      !device && res.status(404).json("device not found");
+      !device && res.status(500).json("device not found");
 
       const validPassword = await bcrypt.compare(
           req.body.password,
           device.password
       );
-      !validPassword && res.status(400).json("wrong password");
+      !validPassword && res.status(500).json("wrong password");
 
       if (!currentUser.devices.includes(req.body.deviceCode )) {
         await currentUser.updateOne({ $push: { devices: req.body.deviceCode  } });
         res.status(200).json("device has been added");
       } else {
-        res.status(403).json("you already have this device");
+        res.status(500).json("you already have this device");
       }
     } catch (err) {
       res.status(500).json(err);
     }
   } else {
-    res.status(403).json("no device id");
+    res.status(500).json("no device id");
   }
 });
 
@@ -90,13 +90,13 @@ router.put("/:id/removeDevice", async (req, res) => {
         await currentUser.updateOne({ $pull: { devices: req.params.id } });
         res.status(200).json("device has been removed");
       } else {
-        res.status(403).json("you dont have this device");
+        res.status(500).json("you dont have this device");
       }
     } catch (err) {
       res.status(500).json(err);
     }
   } else {
-    res.status(403).json("no device id");
+    res.status(500).json("no device id");
   }
 });
 

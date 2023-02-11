@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Device = require("../models/Device");
 const bcrypt = require("bcrypt");
+const User = require("../models/User");
 
 //REGISTER
 router.post("/register", async (req, res) => {
@@ -11,7 +12,8 @@ router.post("/register", async (req, res) => {
 
     //create new device
     const newDevice = new Device({
-      userID:req.body.userID,
+
+      username:req.body.username,
       deviceCode: req.body.code,
       password: hashedPassword,
     });
@@ -51,5 +53,7 @@ router.get("/alldevice/:username", async (req, res) => {
 //update device
 //delete device
 //get a device
+
+
 
 module.exports = router;

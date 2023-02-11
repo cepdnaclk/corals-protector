@@ -1,6 +1,8 @@
 // Dependencies
 const awsIot = require("aws-iot-device-sdk");
 const SensorReading = require("./models/Reading");
+const User =require("./models/User")
+const Device =require("./models/Device")
 
 let device;
 function run() {
@@ -35,33 +37,32 @@ function run() {
     });
 }
 
-function add(data) {
+const add = async (data) =>  {
     console.log(data)
-    // try {
-    //     //Create a new sensor reading
-    //     const reading = new SensorReading({
-    //         deviceCode: data.deviceCode,
-    //         temperature: data.temperature,
-    //         lightIntensity: data.lightIntensity,
-    //         pH: data.pH,
-    //         locations: data.locations,
-    //     });
-    //
-    //
-    //     // const reading = new SensorReading(data);
-    //     // Save the reading to the database
-    //     const read = reading.save();
-    //     console.log("New reading added to collection")
-    // } catch (error) {
-    //     console.log("can not add the reading")
-    // }
+    try {
+        //Create a new sensor reading
+
+        const device = await Device.findOne({ deviceCode: data.deviceCode });
+        let user = await User.findOne({ username: device.username });
+        let location = data.locations
+        if (data.locations == "0.000000,0.0000000"){
+            location = "7.254624, 80.591380"
+        }
+        const reading = new SensorReading({
+            userID: user._id,
+            deviceCode: data.deviceCode,
+            temperature: data.Temperature,
+            lightIntensity: data.LDR,
+            pH: data.pH,
+            locations: location,
+        });
+
+        // Save the reading to the database
+        const read = reading.save();
+        console.log("New reading added  collection")
+    } catch (error) {
+        console.log("can not add the reading")
+    }
 }
 
-
-function sendData() {
-    const obj = { type: "sync" };
-    console.log("STEP - Requesting data from AWS  IoT Core");
-    device.publish("/device1/", JSON.stringify(obj));
-}
-
-module.exports = { run, sendData };
+module.exports = {run};

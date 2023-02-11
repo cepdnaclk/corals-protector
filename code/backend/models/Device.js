@@ -6,7 +6,7 @@ const deviceSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-      userID: {
+      username: {
           type: String,
       },
     password: {

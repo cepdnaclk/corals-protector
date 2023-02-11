@@ -1,5 +1,9 @@
 import './App.css';
 
+
+
+
+
 import React, {useContext, useEffect} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {FiSettings} from 'react-icons/fi';
@@ -15,7 +19,7 @@ import {
     Ph,
     Temperature,
     Light,
-    Adminpage, RegisterUser , RegisterDevice,GetdataTest
+    Adminpage, RegisterUser, RegisterDevice, GetdataTest, Contact, Reset
 } from './pages';
 
 
@@ -88,9 +92,11 @@ function App() {
                                 {/* dashboard  */}
                                 <Route path="/" element={(<Home/>)}/>
                                 <Route path="/home" element={(<Home/>)}/>
+                                <Route path="/contactus" element={(<Contact/>)}/>
                                 <Route path="/aboutus" element={<Aboutus/>}/>
                                 <Route path="/login" element={user?<Home/>:<Login/>}/>
                                 <Route path="/adddevice" element={user?<AddDevice/>:<Login/>}/>
+                                <Route path="/resetpassword" element={user?<Reset/>:<Login/>}/>
                                 <Route path="/maintable" element={user?<MainTable/>:<Login/>}/>
                                 <Route path="/device" element={user?<Device/>:<Login/>}/>
                                 <Route path="/ph" element={user?<Ph/>:<Login/>}/>

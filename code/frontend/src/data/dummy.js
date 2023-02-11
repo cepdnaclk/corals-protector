@@ -73,6 +73,7 @@ export const LinePrimaryYAxisTemperature = {
   minimum: 0,
   maximum: 60,
   interval: 6,
+  title:"Temperature",
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
@@ -80,9 +81,10 @@ export const LinePrimaryYAxisTemperature = {
 export const LinePrimaryYAxisLight = {
   labelFormat: '{value}',
   rangePadding: 'None',
+  title:"Light Intensity",
   minimum: 0,
-  maximum: 100,
-  interval: 20,
+  maximum: 5000,
+  interval: 500,
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
@@ -104,31 +106,22 @@ export const links = [
         name: 'AboutUs',
         icon: <GiWaveSurfer />,
       },
+    ],
+  },
+  {
+    title: 'Table',
+    links: [
       {
-        name: 'AddDevice',
-        icon: <TbDeviceHeartMonitor />,
+        name: 'MainTable',
+        icon: <BsTable />,
       },
     ],
   },
 
-  {
-    title: 'Devices',
-    links: [
-      {
-        name: 'Device',
-        icon: <TbDeviceHeartMonitor />,
-      },
-      
-    ],
-  },
 
   {
     title: 'Charts',
     links: [
-      {
-        name: 'Maintable',
-        icon: <BsTable />,
-      },
       {
         name: 'Ph',
         icon: <AiOutlineStock />,
@@ -140,6 +133,19 @@ export const links = [
       {
         name: 'Temperature',
         icon: <AiOutlineStock />,
+      },
+    ],
+  },
+  {
+    title: 'Others',
+    links: [
+      {
+        name: 'ContactUs ',
+        icon: <AiOutlineHome />,
+      },
+      {
+        name: 'ResetPassword',
+        icon: <GiWaveSurfer />,
       },
     ],
   },
@@ -182,6 +188,12 @@ export const readingsGrid = [
     width: '150',
     textAlign: 'Center',
   },
+  {
+    field: 'Device',
+    headerText: 'Device',
+    width: '150',
+    textAlign: 'Center',
+  },
   { field: 'Location',
     headerText: 'Location',
     width: '150',
@@ -194,7 +206,7 @@ export const readingsGrid = [
     width: '150',
   },
   {
-    headerText: 'Sunlight',
+    headerText: 'Light Intensity',
     field: 'Sunlight',
     textAlign: 'Center',
     width: '120',

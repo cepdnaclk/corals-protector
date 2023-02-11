@@ -3,7 +3,8 @@ import {FiSettings} from "react-icons/fi";
 import {useStateContext} from "../contexts/ContextProvider";
 import { useNavigate } from "react-router-dom";
 import {AuthContext} from "../contexts/AuthContext";
-
+import image1 from "../data/01.jpg"
+import image2 from "../data/02.jpg"
 
 const Home = () => {
     const {user} = useContext(AuthContext)
@@ -39,10 +40,8 @@ const Home = () => {
                             className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                             <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                                 <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Corals Protector</h2>
-                                <p className="mb-4">Sri Lanka is an island. We have many sea resources. One of the main resources is coral reefs. For centuries, coral reefs have been a valuable resource for the people of Sri Lanka. Coral reefs are among the most biologically valuable ecosystems on the globe. Coral reefs rank among the most biologically productive and diverse of all-natural ecosystems. A single reef can be home to 3,000 different species, while one-third of the world’s fish species depend on them.</p>
-                                <p>We are strategists, designers and developers. Innovators and problem solvers. Small
-                                    enough to be
-                                    simple and quick.</p>
+                                <p className="mb-4">Sri Lanka is home to many valuable sea resources, including coral reefs. These reefs are among the most biologically productive and diverse ecosystems in the world, providing vital protection to the shores, food and new medicines. However, coral reefs are currently being destroyed due to a lack of understanding of the environmental conditions they need to survive. </p>
+                                <p>To address this issue, we have created a device that can measure the temperature, acidity, salinity and sunlight of the water, and send the readings to a database. The data is then displayed on a website with graphical analytics, allowing researchers and society members to check the analytics and take action accordingly. This device will greatly help in the conservation and growth of coral reefs in Sri Lanka.</p>
                                 <div className="mt-12" >
                                     {user?"":
                                     <button
@@ -84,10 +83,10 @@ const Home = () => {
                             </div>
                             <div className="grid grid-cols-2 gap-4 mt-8" >
                                 <img className="w-full rounded-lg"
-                                     src="https://github.com/cepdnaclk/e18-3yp-Corals-Protector/blob/main/code/frontend/Assets/01.jpg?raw=true"
+                                     src={image1}
                                      alt="office content 1"/>
                                 <img className="mt-4 w-full lg:mt-10 rounded-lg"
-                                     src="https://github.com/cepdnaclk/e18-3yp-Corals-Protector/blob/main/code/frontend/Assets/02.jpg?raw=true"
+                                     src={image2}
                                      alt="office content 2"/>
                             </div>
 

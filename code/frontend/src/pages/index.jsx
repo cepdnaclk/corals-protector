@@ -10,6 +10,8 @@ export { default as Adminpage} from './Adminpage'
 export { default as RegisterUser} from './RegisterUser'
 export { default as RegisterDevice} from './RegisterDevice'
 export { default as GetdataTest} from './GetdataTest'
+export { default as Contact} from './Contact'
+export { default as Reset} from './Reset'
 
 
 
