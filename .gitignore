@@ -4,3 +4,5 @@ code/backend/.env
 *.xml
 *.pem
 *.pem
+*.crt
+*.key
